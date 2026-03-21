@@ -33,7 +33,7 @@
 
 **Fuentes sugeridas:**
 - Efesios 1:7: [directo](https://wol.jw.org/es/wol/l/r4/lp-s?q=Efesios+1%3A7) | [búsqueda abreviada](https://wol.jw.org/es/wol/l/r4/lp-s?q=Efesios+1%3A7)
-- 1 Juan 1:6, 7: [directo](https://wol.jw.org/es/wol/l/r4/lp-s?q=1+Juan+1%3A6-7) | [búsqueda abreviada](https://wol.jw.org/es/wol/l/r4/lp-s?q=1+Juan+1%3A6%2C+7)
+- 1 Juan 1:6, 7: [directo](https://wol.jw.org/es/wol/l/r4/lp-s?q=1+Juan+1%3A6%2C+7) | [búsqueda abreviada](https://wol.jw.org/es/wol/l/r4/lp-s?q=1+Juan+1%3A6%2C+7)
 
 ## Imperfección {#imperfeccion}
 
@@ -66,7 +66,7 @@
 
 **Fuentes sugeridas:**
 - it-2 “Misericordia”: [directo](https://wol.jw.org/es/wol/pc/r4/lp-s/1204449/208/0) | [búsqueda abreviada](https://wol.jw.org/es/wol/l/r4/lp-s?q=it-2+Misericordia)
-- Efesios 2:4, 5: [directo](https://wol.jw.org/es/wol/l/r4/lp-s?q=Efesios+2%3A4-5) | [búsqueda abreviada](https://wol.jw.org/es/wol/l/r4/lp-s?q=Efesios+2%3A4%2C+5)
+- Efesios 2:4, 5: [directo](https://wol.jw.org/es/wol/l/r4/lp-s?q=Efesios+2%3A4%2C+5) | [búsqueda abreviada](https://wol.jw.org/es/wol/l/r4/lp-s?q=Efesios+2%3A4%2C+5)
 
 ## Justicia {#justicia}
 
@@ -88,7 +88,7 @@
 
 **Fuentes sugeridas:**
 - Respuesta sobre 1 Juan 2:2; 4:10: [directo](https://wol.jw.org/es/wol/pc/r4/lp-s/1200273142/7/0) | [búsqueda abreviada](https://wol.jw.org/es/wol/l/r4/lp-s?q=1+Juan+2%3A2+sacrificio+propiciatorio)
-- it-1 “Expiación”: [directo](https://wol.jw.org/es/wol/s/r4/lp-s?fc%5B%5D=it&p=par&q=hebreos+10&r=occ&st=e) | [búsqueda abreviada](https://wol.jw.org/es/wol/l/r4/lp-s?q=it-1+Expiaci%C3%B3n)
+- it-1 “Expiación”: [directo](https://wol.jw.org/es/wol/l/r4/lp-s?q=it-1+Expiaci%C3%B3n) | [búsqueda abreviada](https://wol.jw.org/es/wol/l/r4/lp-s?q=it-1+Expiaci%C3%B3n)
 
 ## Bondad inmerecida {#bondad-inmerecida}
 

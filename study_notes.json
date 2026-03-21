@@ -206,7 +206,20 @@
       ],
       "main_point": "Este párrafo es el mapa del artículo; conviene dejar muy claro que todo lo que sigue cuelga de estas tres bendiciones.",
       "application": "Vale la pena pedir una respuesta muy breve y, si hace falta, otra mano que nombre la segunda o tercera bendición.",
-      "extra_question": "¿Cuál de estas tres bendiciones te ayuda más a valorar la Conmemoración este año?",
+      "extra_question": "¿Por qué conviene ver este párrafo como el mapa del artículo?",
+      "concept_title": "Mapa del artículo",
+      "concept_question": "¿Por qué conviene ver este párrafo como el mapa del artículo?",
+      "concept_answer": "Porque resume las tres bendiciones que el artículo desarrollará después: perdón, curación y reconciliación.",
+      "concept_sources": [
+        {
+          "label": "Rom. 7:25",
+          "href": "https://wol.jw.org/es/wol/l/r4/lp-s?q=Romanos+7%3A25"
+        },
+        {
+          "label": "Col. 1:14",
+          "href": "https://wol.jw.org/es/wol/l/r4/lp-s?q=Colosenses+1%3A14"
+        }
+      ],
       "timing_minutes": 3.0,
       "note_links": [
         {
@@ -331,7 +344,20 @@
       ],
       "main_point": "El perdón de Jehová no es sentimentalismo: está plenamente en armonía con su justicia.",
       "application": "Si resaltamos esta base legal, ayudamos a la congregación a confiar más en el perdón divino y menos en sus propios sentimientos.",
-      "extra_question": "¿Por qué fortalece nuestra fe saber que el perdón de Jehová no contradice su justicia, sino que la satisface?",
+      "extra_question": "¿Por qué Jehová no podía simplemente pasar por alto el pecado?",
+      "concept_title": "Base válida",
+      "concept_question": "¿Por qué Jehová no podía simplemente pasar por alto el pecado?",
+      "concept_answer": "Porque su justicia perfecta requería una base válida; el perdón tenía que estar en armonía con sus normas, y Jesús aportó esa base.",
+      "concept_sources": [
+        {
+          "label": "Efes. 1:7",
+          "href": "https://wol.jw.org/es/wol/l/r4/lp-s?q=Efesios+1%3A7"
+        },
+        {
+          "label": "Justicia",
+          "href": "https://wol.jw.org/es/wol/l/r4/lp-s?q=Justicia"
+        }
+      ],
       "timing_minutes": 2.75,
       "note_links": [
         {
@@ -374,7 +400,20 @@
       ],
       "main_point": "La Ley mosaica no competía con el rescate; lo prefiguraba y enseñaba el valor de la sangre para expiar.",
       "application": "Aquí conviene conectar la idea con la Conmemoración y con el lenguaje bíblico de ser lavados, santificados y declarados justos.",
-      "extra_question": "¿Qué nos enseña el anticipo de los sacrificios sobre el enorme valor del sacrificio de Jesús?",
+      "extra_question": "¿Por qué hacía falta una base legal?",
+      "concept_title": "Base legal",
+      "concept_question": "¿Por qué hacía falta una base legal?",
+      "concept_answer": "Porque el rescate tenía que equivaler exactamente a lo que Adán perdió: una vida humana perfecta por otra, de modo que la justicia quedara satisfecha.",
+      "concept_sources": [
+        {
+          "label": "it-2 “Rescate”",
+          "href": "https://wol.jw.org/es/wol/l/r4/lp-s?q=it-2+Rescate"
+        },
+        {
+          "label": "w25 feb. 1 Tim. 2:6",
+          "href": "https://wol.jw.org/es/wol/l/r4/lp-s?q=w25+febrero+1+Timoteo+2%3A6+rescate"
+        }
+      ],
       "timing_minutes": 2.75,
       "note_links": [
         {
@@ -395,12 +434,12 @@
       "kind": "troncal",
       "direct_answer": "Antes de la Conmemoración podemos meditar en que Jehová, gracias al rescate, nos perdona de verdad y no quiere que vivamos aplastados por pecados ya arrepentidos.",
       "underline_text": [
-        "gracias al rescate no tenemos que mortificarnos recordando pecados del pasado"
+        "gracias al rescate no tenemos que mortificarnos recordando pecados del pasado de los que ya nos hemos arrepentido"
       ],
       "highlights": [
         {
           "kind": "primary",
-          "text": "pensar en cómo nos beneficia saber que Jehová nos perdona."
+          "text": "gracias al rescate no tenemos que mortificarnos recordando pecados del pasado de los que ya nos hemos arrepentido"
         },
         {
           "kind": "secondary",
@@ -417,7 +456,20 @@
       ],
       "main_point": "El artículo aterriza el rescate en la conciencia cristiana: Jehová puede perdonar de un modo que nosotros a veces tardamos en aceptar.",
       "application": "Este es un buen párrafo para pedir una aplicación práctica, no una confesión personal larga.",
-      "extra_question": "¿Cómo nos ayuda este párrafo a distinguir entre arrepentimiento sincero y seguir castigándonos cuando Jehová ya perdonó?",
+      "extra_question": "¿Por qué no debemos seguir juzgándonos si Jehová ya perdonó?",
+      "concept_title": "Perdón real",
+      "concept_question": "¿Por qué no debemos seguir juzgándonos si Jehová ya perdonó?",
+      "concept_answer": "Porque Jehová es quien decide sobre el perdón, y el rescate le da base legal para limpiarnos por completo.",
+      "concept_sources": [
+        {
+          "label": "1 Juan 1:6, 7",
+          "href": "https://wol.jw.org/es/wol/l/r4/lp-s?q=1+Juan+1%3A6-7"
+        },
+        {
+          "label": "Sal. 86:5",
+          "href": "https://wol.jw.org/es/wol/l/r4/lp-s?q=Salmo+86%3A5"
+        }
+      ],
       "timing_minutes": 3.5,
       "note_links": [
         {
@@ -438,7 +490,7 @@
       "kind": "troncal",
       "direct_answer": "La palabra pecado no solo se refiere a lo malo que hacemos, sino también a la imperfección que heredamos desde la concepción.",
       "underline_text": [
-        "Esta imperfección no solo nos empuja hacia lo malo"
+        "no solo se refiere a algo malo que"
       ],
       "highlights": [
         {
@@ -447,7 +499,19 @@
         },
         {
           "kind": "primary",
+          "text": "hacemos,"
+        },
+        {
+          "kind": "primary",
           "text": "sino también a algo que"
+        },
+        {
+          "kind": "primary",
+          "text": "heredamos"
+        },
+        {
+          "kind": "primary",
+          "text": "desde el momento en que somos concebidos: la imperfección"
         },
         {
           "kind": "secondary",
@@ -464,7 +528,20 @@
       ],
       "main_point": "Aquí el artículo amplía el sentido del pecado para explicar por qué el rescate no solo perdona culpas, sino que también abre la puerta a la curación total.",
       "application": "Vale la pena ayudar a la congregación a ver la conexión entre pecado heredado, enfermedad, envejecimiento y muerte.",
-      "extra_question": "¿Por qué entender el pecado como condición heredada ensancha nuestro aprecio por el rescate?",
+      "extra_question": "¿Por qué aquí pecado incluye algo que heredamos?",
+      "concept_title": "Pecado heredado",
+      "concept_question": "¿Por qué aquí pecado incluye algo que heredamos?",
+      "concept_answer": "Porque el artículo está explicando que el rescate no solo cubre actos malos, sino también la condición imperfecta que todos recibimos de Adán.",
+      "concept_sources": [
+        {
+          "label": "Sal. 51:5",
+          "href": "https://wol.jw.org/es/wol/l/r4/lp-s?q=Salmo+51%3A5"
+        },
+        {
+          "label": "it-2 “Pecado”",
+          "href": "https://wol.jw.org/es/wol/l/r4/lp-s?q=it-2+Pecado"
+        }
+      ],
       "timing_minutes": 4.0,
       "note_links": [
         {
@@ -593,7 +670,20 @@
       ],
       "main_point": "La curación que hace posible el rescate no es parcial ni simbólica; es completa y futura, y afecta cuerpo, mente y emociones.",
       "application": "Aquí conviene dejar que la esperanza respire; una respuesta sencilla y otra aplicada bastan.",
-      "extra_question": "¿Cómo fortalece tu aguante diario pensar en la liberación total que describe este párrafo?",
+      "extra_question": "¿Qué demuestra que la curación del rescate será total?",
+      "concept_title": "Esperanza completa",
+      "concept_question": "¿Qué demuestra que la curación del rescate será total?",
+      "concept_answer": "Que la liberación prometida incluye cuerpo, mente y emociones, no solo alivio parcial.",
+      "concept_sources": [
+        {
+          "label": "Rom. 8:21",
+          "href": "https://wol.jw.org/es/wol/l/r4/lp-s?q=Romanos+8%3A21"
+        },
+        {
+          "label": "Is. 9:6, 7",
+          "href": "https://wol.jw.org/es/wol/l/r4/lp-s?q=Isa%C3%ADas+9%3A6-7"
+        }
+      ],
       "timing_minutes": 4.5,
       "note_links": [
         {
@@ -636,7 +726,16 @@
       ],
       "main_point": "La esperanza del rescate no solo consuela a futuro; ya actúa como ancla para el alma en el presente.",
       "application": "Este párrafo abre la puerta a comentarios muy edificantes sobre aguante, siempre que se mantengan breves.",
-      "extra_question": "¿Qué prueba actual se vuelve más llevadera cuando meditas en la esperanza que hace posible el rescate?",
+      "extra_question": "¿Cómo actúa hoy la esperanza que hace posible el rescate?",
+      "concept_title": "Ancla para el alma",
+      "concept_question": "¿Cómo actúa hoy la esperanza que hace posible el rescate?",
+      "concept_answer": "Estabiliza nuestra fe y nos ayuda a aguantar las pruebas mientras esperamos la liberación completa.",
+      "concept_sources": [
+        {
+          "label": "Heb. 6:18, 19",
+          "href": "https://wol.jw.org/es/wol/l/r4/lp-s?q=Hebreos+6%3A18-19"
+        }
+      ],
       "timing_minutes": 3.5,
       "note_links": [
         {
@@ -679,7 +778,20 @@
       ],
       "main_point": "Aquí el artículo cambia de beneficio a relación: no solo necesitábamos alivio, necesitábamos volver a Jehová.",
       "application": "El conductor puede subrayar que el abismo no es sentimental, sino moral: la santidad de Jehová no aprueba el pecado.",
-      "extra_question": "¿Por qué el artículo compara el rescate con un puente y qué te enseña eso sobre tu amistad con Jehová?",
+      "extra_question": "¿Por qué hacía falta un puente y no solo consuelo?",
+      "concept_title": "Reconciliación",
+      "concept_question": "¿Por qué hacía falta un puente y no solo consuelo?",
+      "concept_answer": "Porque el pecado abrió una separación real entre Jehová y la humanidad, y el rescate hace posible volver a estar en paz con Él.",
+      "concept_sources": [
+        {
+          "label": "Col. 1:21",
+          "href": "https://wol.jw.org/es/wol/l/r4/lp-s?q=Colosenses+1%3A21"
+        },
+        {
+          "label": "it-2 “Reconciliación”",
+          "href": "https://wol.jw.org/es/wol/l/r4/lp-s?q=it-2+Reconciliaci%C3%B3n"
+        }
+      ],
       "timing_minutes": 4.5,
       "note_links": [
         {
@@ -722,7 +834,20 @@
       ],
       "main_point": "Este es uno de los párrafos doctrinalmente más densos; conviene explicar 'propiciatorio' con claridad, pero sin volverlo técnico en exceso.",
       "application": "Un comentario adicional bien elegido puede mostrar que reconciliación no es automaticidad, sino una puerta abierta sobre base legal.",
-      "extra_question": "¿Cómo te ayuda este párrafo a entender bien la expresión “sacrificio propiciatorio” sin pensar que Jehová tuvo que cambiar de personalidad?",
+      "extra_question": "¿En qué sentido apaciguó el rescate a Jehová?",
+      "concept_title": "Sacrificio propiciatorio",
+      "concept_question": "¿En qué sentido apaciguó el rescate a Jehová?",
+      "concept_answer": "No cambió la personalidad de Jehová; satisfizo su justicia y le dio base para restablecer una buena relación con humanos pecadores.",
+      "concept_sources": [
+        {
+          "label": "1 Juan 2:2",
+          "href": "https://wol.jw.org/es/wol/l/r4/lp-s?q=1+Juan+2%3A2"
+        },
+        {
+          "label": "Rom. 3:23-26",
+          "href": "https://wol.jw.org/es/wol/l/r4/lp-s?q=Romanos+3%3A23-26"
+        }
+      ],
       "timing_minutes": 5.0,
       "note_links": [
         {
@@ -765,7 +890,20 @@
       ],
       "main_point": "La reconciliación no borra el respeto; al contrario, lo hace más profundo y agradecido.",
       "application": "Aquí cabe muy bien una aplicación sobre humildad: nuestra cercanía a Jehová nunca se basa en méritos personales.",
-      "extra_question": "¿Qué cambia en tu manera de orar y de ver tu amistad con Jehová cuando recuerdas esta base del rescate?",
+      "extra_question": "¿Qué protege de la familiaridad excesiva al llamar Padre a Jehová?",
+      "concept_title": "Padre y Amigo",
+      "concept_question": "¿Qué protege de la familiaridad excesiva al llamar Padre a Jehová?",
+      "concept_answer": "Recordar que esa cercanía no nace de méritos propios, sino del rescate, y por eso va unida a humildad y respeto.",
+      "concept_sources": [
+        {
+          "label": "Mat. 6:9",
+          "href": "https://wol.jw.org/es/wol/l/r4/lp-s?q=Mateo+6%3A9"
+        },
+        {
+          "label": "Col. 1:19, 20",
+          "href": "https://wol.jw.org/es/wol/l/r4/lp-s?q=Colosenses+1%3A19-20"
+        }
+      ],
       "timing_minutes": 3.5,
       "note_links": [
         {
@@ -808,7 +946,20 @@
       ],
       "main_point": "La misericordia de Jehová no anula la verdad sobre el pecado; interviene precisamente porque reconoce nuestra condición desesperada.",
       "application": "Este párrafo permite conectar el rescate con la predicación y con la paciencia de Jehová hacia los que aún pueden responder al mensaje.",
-      "extra_question": "¿Cómo evita este párrafo que veamos la misericordia de Jehová como una idea abstracta o sentimental?",
+      "extra_question": "¿Cómo muestra este párrafo que la misericordia de Jehová actúa de verdad?",
+      "concept_title": "Misericordia activa",
+      "concept_question": "¿Cómo muestra este párrafo que la misericordia de Jehová actúa de verdad?",
+      "concept_answer": "Porque no se queda en sentimiento: Jehová da vida, hace llegar el mensaje del Reino y abre el camino para conocerlo.",
+      "concept_sources": [
+        {
+          "label": "Efes. 2:4, 5",
+          "href": "https://wol.jw.org/es/wol/l/r4/lp-s?q=Efesios+2%3A4-5"
+        },
+        {
+          "label": "Juan 17:3",
+          "href": "https://wol.jw.org/es/wol/l/r4/lp-s?q=Juan+17%3A3"
+        }
+      ],
       "timing_minutes": 3.0,
       "note_links": [
         {

@@ -18,7 +18,7 @@
 **Relación principal:** Presenta la misericordia de Jehová como rica, activa y manifestada en dar vida a quienes estaban muertos espiritualmente.
 **Uso para el conductor:** Muy útil para reforzar que la misericordia no es indulgencia barata, sino rescate sobre base justa.
 **WOL directo:** [https://wol.jw.org/es/wol/bc/r4/lp-s/2026243/34/0](https://wol.jw.org/es/wol/bc/r4/lp-s/2026243/34/0)
-**Búsqueda abreviada:** [https://wol.jw.org/es/wol/l/r4/lp-s?q=Efesios+2%3A4-5](https://wol.jw.org/es/wol/l/r4/lp-s?q=Efesios+2%3A4-5)
+**Búsqueda abreviada:** [https://wol.jw.org/es/wol/l/r4/lp-s?q=Efesios+2%3A4%2C+5](https://wol.jw.org/es/wol/l/r4/lp-s?q=Efesios+2%3A4%2C+5)
 
 ### Hech. 13:48 {#hech-13-48}
 
@@ -100,7 +100,7 @@
 **Relación principal:** Ilustra lo que logra el rescate en la vida real: lavar, santificar y declarar justos a pecadores arrepentidos.
 **Uso para el conductor:** Sirve para destacar el poder transformador del sacrificio de Jesús.
 **WOL directo:** [https://wol.jw.org/es/wol/bc/r4/lp-s/2026243/13/0](https://wol.jw.org/es/wol/bc/r4/lp-s/2026243/13/0)
-**Búsqueda abreviada:** [https://wol.jw.org/es/wol/l/r4/lp-s?q=1+Corintios+6%3A9-11](https://wol.jw.org/es/wol/l/r4/lp-s?q=1+Corintios+6%3A9-11)
+**Búsqueda abreviada:** [https://wol.jw.org/es/wol/l/r4/lp-s?q=1+Cor.+6%3A9-11](https://wol.jw.org/es/wol/l/r4/lp-s?q=1+Cor.+6%3A9-11)
 
 ### 1 Juan 1:6, 7 {#1-juan-1-6-7}
 
@@ -108,7 +108,7 @@
 **Relación principal:** Confirma que la sangre de Jesús realmente limpia de todo pecado a quienes andan en la luz.
 **Uso para el conductor:** Muy útil si se quiere reforzar la confianza en el perdón divino.
 **WOL directo:** [https://wol.jw.org/es/wol/bc/r4/lp-s/2026243/14/0](https://wol.jw.org/es/wol/bc/r4/lp-s/2026243/14/0)
-**Búsqueda abreviada:** [https://wol.jw.org/es/wol/l/r4/lp-s?q=1+Juan+1%3A6-7](https://wol.jw.org/es/wol/l/r4/lp-s?q=1+Juan+1%3A6-7)
+**Búsqueda abreviada:** [https://wol.jw.org/es/wol/l/r4/lp-s?q=1+Juan+1%3A6%2C+7](https://wol.jw.org/es/wol/l/r4/lp-s?q=1+Juan+1%3A6%2C+7)
 
 ### 1 Juan 1:8 {#1-juan-1-8}
 
@@ -132,7 +132,7 @@
 **Relación principal:** Relaciona la paz con Jehová con la sangre que Jesús derramó en el madero de tormento.
 **Uso para el conductor:** Resalta con claridad que la amistad con Jehová descansa en el rescate y no en méritos humanos.
 **WOL directo:** [https://wol.jw.org/es/wol/bc/r4/lp-s/2026243/33/0](https://wol.jw.org/es/wol/bc/r4/lp-s/2026243/33/0)
-**Búsqueda abreviada:** [https://wol.jw.org/es/wol/l/r4/lp-s?q=Colosenses+1%3A19-20](https://wol.jw.org/es/wol/l/r4/lp-s?q=Colosenses+1%3A19-20)
+**Búsqueda abreviada:** [https://wol.jw.org/es/wol/l/r4/lp-s?q=Colosenses+1%3A19%2C+20](https://wol.jw.org/es/wol/l/r4/lp-s?q=Colosenses+1%3A19%2C+20)
 
 ### Colosenses 1:21 {#colosenses-1-21}
 
@@ -164,7 +164,7 @@
 **Relación principal:** La esperanza que hace posible el rescate actúa como ancla firme para el alma.
 **Uso para el conductor:** Buen texto para pedir una aplicación breve sobre aguante.
 **WOL directo:** [https://wol.jw.org/es/wol/bc/r4/lp-s/2026243/23/0](https://wol.jw.org/es/wol/bc/r4/lp-s/2026243/23/0)
-**Búsqueda abreviada:** [https://wol.jw.org/es/wol/l/r4/lp-s?q=Hebreos+6%3A18-19](https://wol.jw.org/es/wol/l/r4/lp-s?q=Hebreos+6%3A18-19)
+**Búsqueda abreviada:** [https://wol.jw.org/es/wol/l/r4/lp-s?q=Hebreos+6%3A18%2C+19](https://wol.jw.org/es/wol/l/r4/lp-s?q=Hebreos+6%3A18%2C+19)
 
 ### Hechos 13:48 {#hechos-13-48}
 

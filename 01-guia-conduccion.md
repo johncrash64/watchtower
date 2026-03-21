@@ -39,7 +39,10 @@
 **Idea troncal:** Este párrafo es el mapa del artículo; conviene dejar muy claro que todo lo que sigue cuelga de estas tres bendiciones.
 **Aplicación:** Vale la pena pedir una respuesta muy breve y, si hace falta, otra mano que nombre la segunda o tercera bendición.
 **Resaltado en el texto:** support: “¡A Dios le doy gracias por medio de Jesucristo nuestro Señor!” / secondary: Ese rescate hace posibles / primary: de nuestros pecados / primary: nuestra curación física y emocional / primary: la reconciliación con nuestro Creador / key: crecerán nuestro amor por “el Dios que da esperanza” y nuestra gratitud hacia Jesús
-**Pregunta adicional:** ¿Cuál de estas tres bendiciones te ayuda más a valorar la Conmemoración este año?
+**Pregunta adicional:** ¿Por qué conviene ver este párrafo como el mapa del artículo?
+**Concepto clave:** Mapa del artículo
+**Pregunta de concepto:** ¿Por qué conviene ver este párrafo como el mapa del artículo?
+**Respuesta corta:** Porque resume las tres bendiciones que el artículo desarrollará después: perdón, curación y reconciliación.
 **Texto base del párrafo:** 3 Tras mencionar la situación tan difícil en la que estaba, Pablo dio un rayo de esperanza. Justo después de preguntar “¿Quién me librará del cuerpo que está sufriendo esta muerte?”, contestó enérgicamente: “¡A Dios le doy gracias por medio de Jesucristo nuestro Señor!” ( Rom. 7:25 ). El apóstol se estaba refiriendo al rescate a mediante el sacrificio de Jesús. Ese rescate hace posibles 1) el perdón de nuestros pecados , 2) nuestra curación física y emocional , y 3) la reconciliación con nuestro Creador . A medida que vayamos analizando estos puntos, crecerán nuestro amor por “el Dios que da esperanza” y nuestra gratitud hacia Jesús , “mediante quien tenemos nuestra liberación por rescate” ( Rom. 15:13; Col. 1:14 ).
 **Ampliar:**
 - [Tema del artículo](./00-articulo-fuente.md)
@@ -82,7 +85,10 @@
 **Idea troncal:** El perdón de Jehová no es sentimentalismo: está plenamente en armonía con su justicia.
 **Aplicación:** Si resaltamos esta base legal, ayudamos a la congregación a confiar más en el perdón divino y menos en sus propios sentimientos.
 **Resaltado en el texto:** primary: La justicia perfecta de Jehová requiere que haya una base válida para perdonar nuestros pecados / key: Él proporcionó esa base al enviar a Jesús a morir para rescatarnos / support: ¿significa esto que, como Jehová nos puede perdonar, a él le da igual si pecamos o no?
-**Pregunta adicional:** ¿Por qué fortalece nuestra fe saber que el perdón de Jehová no contradice su justicia, sino que la satisface?
+**Pregunta adicional:** ¿Por qué Jehová no podía simplemente pasar por alto el pecado?
+**Concepto clave:** Base válida
+**Pregunta de concepto:** ¿Por qué Jehová no podía simplemente pasar por alto el pecado?
+**Respuesta corta:** Porque su justicia perfecta requería una base válida; el perdón tenía que estar en armonía con sus normas, y Jesús aportó esa base.
 **Texto base del párrafo:** 6 La justicia perfecta de Jehová requiere que haya una base válida para perdonar nuestros pecados . Él proporcionó esa base al enviar a Jesús a morir para rescatarnos ( Efes. 1:7 ). Ahora bien, ¿significa esto que, como Jehová nos puede perdonar, a él le da igual si pecamos o no? Al contrario, sí que le importa ( Is. 59:2 ).
 **Ampliar:**
 - [Justicia](./03-terminos-clave.md#justicia)
@@ -97,7 +103,10 @@
 **Idea troncal:** La Ley mosaica no competía con el rescate; lo prefiguraba y enseñaba el valor de la sangre para expiar.
 **Aplicación:** Aquí conviene conectar la idea con la Conmemoración y con el lenguaje bíblico de ser lavados, santificados y declarados justos.
 **Resaltado en el texto:** secondary: los israelitas sacrificaran animales para expiar sus pecados / support: Aquellos sacrificios fueron un anticipo de algo mucho más grande / key: el sacrificio de Jesús / primary: La muerte de Jesús le daría a Jehová una base legal para perdonarnos los pecados
-**Pregunta adicional:** ¿Qué nos enseña el anticipo de los sacrificios sobre el enorme valor del sacrificio de Jesús?
+**Pregunta adicional:** ¿Por qué hacía falta una base legal?
+**Concepto clave:** Base legal
+**Pregunta de concepto:** ¿Por qué hacía falta una base legal?
+**Respuesta corta:** Porque el rescate tenía que equivaler exactamente a lo que Adán perdió: una vida humana perfecta por otra, de modo que la justicia quedara satisfecha.
 **Texto base del párrafo:** 7 La Ley de Moisés requería que los israelitas sacrificaran animales para expiar sus pecados ( Lev. 4:27-31; 17:11 ). Aquellos sacrificios fueron un anticipo de algo mucho más grande : el sacrificio de Jesús y sus maravillosas bendiciones. La muerte de Jesús le daría a Jehová una base legal para perdonarnos los pecados . En una de sus cartas, Pablo les habló a los cristianos de Corinto del gran valor del sacrificio de Jesús. Después de mencionar algunas de las cosas malas que habían hecho en el pasado, les dijo: “Han sido lavados, han sido santificados, han sido declarados justos en el nombre de nuestro Señor Jesucristo y con el espíritu de nuestro Dios” ( 1 Cor. 6:9-11 ).
 **Ampliar:**
 - [Rescate](./03-terminos-clave.md#rescate)
@@ -111,9 +120,12 @@
 **Respuesta directa:** Antes de la Conmemoración podemos meditar en que Jehová, gracias al rescate, nos perdona de verdad y no quiere que vivamos aplastados por pecados ya arrepentidos.
 **Idea troncal:** El artículo aterriza el rescate en la conciencia cristiana: Jehová puede perdonar de un modo que nosotros a veces tardamos en aceptar.
 **Aplicación:** Este es un buen párrafo para pedir una aplicación práctica, no una confesión personal larga.
-**Resaltado en el texto:** primary: pensar en cómo nos beneficia saber que Jehová nos perdona. / secondary: Jehová es el responsable de perdonar / support: la sangre de su Hijo Jesús nos limpia de todo pecado / key: él está “dispuesto a perdonar”
-**Pregunta adicional:** ¿Cómo nos ayuda este párrafo a distinguir entre arrepentimiento sincero y seguir castigándonos cuando Jehová ya perdonó?
-**Texto base del párrafo:** 8 Antes de asistir a la Conmemoración este año, dediquemos tiempo a pensar en cómo nos beneficia saber que Jehová nos perdona. Por ejemplo, gracias al rescate no tenemos que mortificarnos recordando pecados del pasado de los que ya nos hemos arrepentido. ¿Y si nos cuesta aceptar que él nos ha perdonado? Quizás pensamos: “Aunque Jehová lo haga, yo no soy capaz de perdonarme”. Pero recordemos que Jehová es el responsable de perdonar , y él le ha dado a su Hijo autoridad para juzgarnos. No nos ha encargado a ninguno de nosotros la labor de decidir quién recibirá su misericordia. La Biblia dice: “Si andamos en la luz, [...] la sangre de su Hijo Jesús nos limpia de todo pecado ” ( 1 Juan 1:6, 7 ). Podemos creer en esta enseñanza bíblica tanto como creemos en todas las demás. El rescate le ha dado a Jehová la base legal para mostrarnos misericordia, y su Palabra enseña que él está “dispuesto a perdonar” ( Sal. 86:5 ).
+**Resaltado en el texto:** primary: gracias al rescate no tenemos que mortificarnos recordando pecados del pasado de los que ya nos hemos arrepentido / secondary: Jehová es el responsable de perdonar / support: la sangre de su Hijo Jesús nos limpia de todo pecado / key: él está “dispuesto a perdonar”
+**Pregunta adicional:** ¿Por qué no debemos seguir juzgándonos si Jehová ya perdonó?
+**Concepto clave:** Perdón real
+**Pregunta de concepto:** ¿Por qué no debemos seguir juzgándonos si Jehová ya perdonó?
+**Respuesta corta:** Porque Jehová es quien decide sobre el perdón, y el rescate le da base legal para limpiarnos por completo.
+**Texto base del párrafo:** 8 Antes de asistir a la Conmemoración este año, dediquemos tiempo a pensar en cómo nos beneficia saber que Jehová nos perdona. Por ejemplo, gracias al rescate no tenemos que mortificarnos recordando pecados del pasado de los que ya nos hemos arrepentido . ¿Y si nos cuesta aceptar que él nos ha perdonado? Quizás pensamos: “Aunque Jehová lo haga, yo no soy capaz de perdonarme”. Pero recordemos que Jehová es el responsable de perdonar , y él le ha dado a su Hijo autoridad para juzgarnos. No nos ha encargado a ninguno de nosotros la labor de decidir quién recibirá su misericordia. La Biblia dice: “Si andamos en la luz, [...] la sangre de su Hijo Jesús nos limpia de todo pecado ” ( 1 Juan 1:6, 7 ). Podemos creer en esta enseñanza bíblica tanto como creemos en todas las demás. El rescate le ha dado a Jehová la base legal para mostrarnos misericordia, y su Palabra enseña que él está “dispuesto a perdonar” ( Sal. 86:5 ).
 **Ampliar:**
 - [Perdón](./03-terminos-clave.md#perdon)
 - [Aplicaciones sobre conciencia](./04-aplicaciones-y-preguntas.md)
@@ -126,8 +138,11 @@
 **Respuesta directa:** La palabra pecado no solo se refiere a lo malo que hacemos, sino también a la imperfección que heredamos desde la concepción.
 **Idea troncal:** Aquí el artículo amplía el sentido del pecado para explicar por qué el rescate no solo perdona culpas, sino que también abre la puerta a la curación total.
 **Aplicación:** Vale la pena ayudar a la congregación a ver la conexión entre pecado heredado, enfermedad, envejecimiento y muerte.
-**Resaltado en el texto:** primary: no solo se refiere a algo malo que / primary: sino también a algo que / secondary: Esta imperfección no solo nos empuja hacia lo malo, sino que también genera en nuestro cuerpo debilidades / support: Esto explica por qué incluso un bebé puede enfermarse y morir a pesar de que no ha hecho nada malo / key: Es una situación en la que estamos todos los descendientes imperfectos de Adán.
-**Pregunta adicional:** ¿Por qué entender el pecado como condición heredada ensancha nuestro aprecio por el rescate?
+**Resaltado en el texto:** primary: no solo se refiere a algo malo que / primary: hacemos, / primary: sino también a algo que / primary: heredamos / primary: desde el momento en que somos concebidos: la imperfección / secondary: Esta imperfección no solo nos empuja hacia lo malo, sino que también genera en nuestro cuerpo debilidades / support: Esto explica por qué incluso un bebé puede enfermarse y morir a pesar de que no ha hecho nada malo / key: Es una situación en la que estamos todos los descendientes imperfectos de Adán.
+**Pregunta adicional:** ¿Por qué aquí pecado incluye algo que heredamos?
+**Concepto clave:** Pecado heredado
+**Pregunta de concepto:** ¿Por qué aquí pecado incluye algo que heredamos?
+**Respuesta corta:** Porque el artículo está explicando que el rescate no solo cubre actos malos, sino también la condición imperfecta que todos recibimos de Adán.
 **Texto base del párrafo:** 9 En la Biblia, la palabra pecado no solo se refiere a algo malo que hacemos, sino también a algo que heredamos desde el momento en que somos concebidos: la imperfección (lea Salmo 51:5 y la nota). Esta imperfección no solo nos empuja hacia lo malo, sino que también genera en nuestro cuerpo debilidades que nos hacen enfermarnos, envejecer y morir. Esto explica por qué incluso un bebé puede enfermarse y morir a pesar de que no ha hecho nada malo , y por qué sufren y mueren tanto las personas malas como las buenas. Es una situación en la que estamos todos los descendientes imperfectos de Adán.
 **Ampliar:**
 - [Pecado](./03-terminos-clave.md#pecado)
@@ -170,7 +185,10 @@
 **Idea troncal:** La curación que hace posible el rescate no es parcial ni simbólica; es completa y futura, y afecta cuerpo, mente y emociones.
 **Aplicación:** Aquí conviene dejar que la esperanza respire; una respuesta sencilla y otra aplicada bastan.
 **Resaltado en el texto:** primary: El rescate hace posible que tengamos la esperanza / secondary: ya no sufriremos enfermedades físicas, mentales o emocionales / support: ni nos atormentarán sentimientos de culpabilidad, ansiedad, inseguridad, dolor o vergüenza / key: seremos capaces de cuidar bien de la Tierra y vivir en paz
-**Pregunta adicional:** ¿Cómo fortalece tu aguante diario pensar en la liberación total que describe este párrafo?
+**Pregunta adicional:** ¿Qué demuestra que la curación del rescate será total?
+**Concepto clave:** Esperanza completa
+**Pregunta de concepto:** ¿Qué demuestra que la curación del rescate será total?
+**Respuesta corta:** Que la liberación prometida incluye cuerpo, mente y emociones, no solo alivio parcial.
 **Texto base del párrafo:** 12 El rescate hace posible que tengamos la esperanza “de que la creación misma también será liberada de la esclavitud a la corrupción” ( Rom. 8:21 ). Esto quiere decir que, cuando estemos en el nuevo mundo y hayamos alcanzado la perfección, ya no sufriremos enfermedades físicas, mentales o emocionales ni nos atormentarán sentimientos de culpabilidad, ansiedad, inseguridad, dolor o vergüenza . Además, bajo el reinado de Jesucristo, el “Príncipe de Paz”, quien nos rescató, seremos capaces de cuidar bien de la Tierra y vivir en paz ( Is. 9:6, 7 ).
 **Ampliar:**
 - [Romanos 8:21](./02-textos-biblicos.md#romanos-8-21)
@@ -185,7 +203,10 @@
 **Idea troncal:** La esperanza del rescate no solo consuela a futuro; ya actúa como ancla para el alma en el presente.
 **Aplicación:** Este párrafo abre la puerta a comentarios muy edificantes sobre aguante, siempre que se mantengan breves.
 **Resaltado en el texto:** primary: meditar en nuestra esperanza estabiliza nuestra fe / secondary: esta esperanza segura y firme que tenemos es como un ancla para el alma / support: nos ayuda a aguantar cualquier prueba / key: son posibles únicamente gracias al rescate.
-**Pregunta adicional:** ¿Qué prueba actual se vuelve más llevadera cuando meditas en la esperanza que hace posible el rescate?
+**Pregunta adicional:** ¿Cómo actúa hoy la esperanza que hace posible el rescate?
+**Concepto clave:** Ancla para el alma
+**Pregunta de concepto:** ¿Cómo actúa hoy la esperanza que hace posible el rescate?
+**Respuesta corta:** Estabiliza nuestra fe y nos ayuda a aguantar las pruebas mientras esperamos la liberación completa.
 **Texto base del párrafo:** 13 Pensemos en cómo será nuestra vida cuando ya no seamos imperfectos. Todos los días nos despertaremos sintiéndonos bien y nunca tendremos que preocuparnos por que nosotros o nuestros seres queridos vayamos a pasar hambre, enfermarnos o morir. Incluso ahora podemos sentir paz al “aferrarnos a la esperanza que está ante nosotros”, pues sabemos que “ esta esperanza segura y firme que tenemos es como un ancla para el alma ” ( Heb. 6:18, 19 ). Tal como un ancla estabiliza un barco, meditar en nuestra esperanza estabiliza nuestra fe y nos ayuda a aguantar cualquier prueba . Estamos convencidos de que Jehová “recompensa a los que lo buscan con empeño” ( Heb. 11:6 ). El consuelo que recibimos ahora y la esperanza que tenemos para el futuro son posibles únicamente gracias al rescate.
 **Ampliar:**
 - [Hebreos 6:18, 19](./02-textos-biblicos.md#hebreos-6-18-19)
@@ -200,7 +221,10 @@
 **Idea troncal:** Aquí el artículo cambia de beneficio a relación: no solo necesitábamos alivio, necesitábamos volver a Jehová.
 **Aplicación:** El conductor puede subrayar que el abismo no es sentimental, sino moral: la santidad de Jehová no aprueba el pecado.
 **Resaltado en el texto:** primary: los seres humanos están separados de Dios / secondary: el pecado ha abierto un abismo entre Dios y los seres humanos / support: Jehová es perfecto y sus justas normas no le permiten aprobar el pecado / key: El rescate es ese puente que hace posible la reconciliación
-**Pregunta adicional:** ¿Por qué el artículo compara el rescate con un puente y qué te enseña eso sobre tu amistad con Jehová?
+**Pregunta adicional:** ¿Por qué hacía falta un puente y no solo consuelo?
+**Concepto clave:** Reconciliación
+**Pregunta de concepto:** ¿Por qué hacía falta un puente y no solo consuelo?
+**Respuesta corta:** Porque el pecado abrió una separación real entre Jehová y la humanidad, y el rescate hace posible volver a estar en paz con Él.
 **Texto base del párrafo:** 14 Desde que Adán y Eva pecaron, los seres humanos están separados de Dios ( Col. 1:21 ). De hecho, la Biblia dice que la humanidad está en enemistad con el Creador ( Rom. 8:7, 8 ). ¿Por qué? Porque Jehová es perfecto y sus justas normas no le permiten aprobar el pecado . Un escritor bíblico le dijo: “Tus ojos son demasiado puros para ver lo que es malo, y no puedes tolerar la maldad” ( Hab. 1:13 ). Como vemos, el pecado ha abierto un abismo entre Dios y los seres humanos . Ninguno de nosotros puede tener una relación con Jehová a menos que se construya un puente para reconciliarnos con él. El rescate es ese puente que hace posible la reconciliación .
 **Ampliar:**
 - [Reconciliación](./03-terminos-clave.md#reconciliacion)
@@ -215,7 +239,10 @@
 **Idea troncal:** Este es uno de los párrafos doctrinalmente más densos; conviene explicar 'propiciatorio' con claridad, pero sin volverlo técnico en exceso.
 **Aplicación:** Un comentario adicional bien elegido puede mostrar que reconciliación no es automaticidad, sino una puerta abierta sobre base legal.
 **Resaltado en el texto:** support: La palabra griega que aquí se traduce “sacrificio de reconciliación” significa literalmente “sacrificio propiciatorio” / primary: logró apaciguar o satisfacer su norma de justicia / secondary: Ahora Jehová tenía una base para restablecer su buena relación con los seres humanos / key: el rescate abre la puerta para que los seres humanos se reconcilien con Dios.
-**Pregunta adicional:** ¿Cómo te ayuda este párrafo a entender bien la expresión “sacrificio propiciatorio” sin pensar que Jehová tuvo que cambiar de personalidad?
+**Pregunta adicional:** ¿En qué sentido apaciguó el rescate a Jehová?
+**Concepto clave:** Sacrificio propiciatorio
+**Pregunta de concepto:** ¿En qué sentido apaciguó el rescate a Jehová?
+**Respuesta corta:** No cambió la personalidad de Jehová; satisfizo su justicia y le dio base para restablecer una buena relación con humanos pecadores.
 **Texto base del párrafo:** 15 La Biblia dice que Jesús es “un sacrificio de reconciliación por nuestros pecados” ( 1 Juan 2:2 ). La palabra griega que aquí se traduce “sacrificio de reconciliación” significa literalmente “sacrificio propiciatorio” y puede referirse a un “medio para apaciguar”. ¿En qué sentido apaciguó el rescate a Jehová? Esto no quiere decir que la muerte de su Hijo de alguna manera lo calmó o tranquilizó, sino que logró apaciguar o satisfacer su norma de justicia . Ahora Jehová tenía una base para restablecer su buena relación con los seres humanos ( Rom. 3:23-26 ). Gracias al rescate, incluso pudo considerar justos a quienes le habían servido fielmente antes de la muerte de Cristo ( Gén. 15:1, 6 ). ¿Por qué? Porque estaba absolutamente convencido de que su Hijo, Jesús, pagaría ese rescate ( Is. 46:10 ). Como vemos, el rescate abre la puerta para que los seres humanos se reconcilien con Dios.
 **Ampliar:**
 - [Propiciación / expiación](./03-terminos-clave.md#propiciacion)
@@ -230,7 +257,10 @@
 **Idea troncal:** La reconciliación no borra el respeto; al contrario, lo hace más profundo y agradecido.
 **Aplicación:** Aquí cabe muy bien una aplicación sobre humildad: nuestra cercanía a Jehová nunca se basa en méritos personales.
 **Resaltado en el texto:** secondary: podemos llamar “Padre” a Jehová / support: debemos hacer las dos cosas siempre con humildad y profundo respeto / primary: Si podemos sentirnos cerca de Jehová y ser sus amigos no es por nuestros propios méritos, sino únicamente gracias al rescate / key: podemos tener una buena relación con Jehová a pesar de ser imperfectos.
-**Pregunta adicional:** ¿Qué cambia en tu manera de orar y de ver tu amistad con Jehová cuando recuerdas esta base del rescate?
+**Pregunta adicional:** ¿Qué protege de la familiaridad excesiva al llamar Padre a Jehová?
+**Concepto clave:** Padre y Amigo
+**Pregunta de concepto:** ¿Qué protege de la familiaridad excesiva al llamar Padre a Jehová?
+**Respuesta corta:** Recordar que esa cercanía no nace de méritos propios, sino del rescate, y por eso va unida a humildad y respeto.
 **Texto base del párrafo:** 16 Pensemos en el efecto que ha tenido en nuestra vida reconciliarnos con Dios. Por ejemplo, podemos llamar “Padre” a Jehová , tal como Jesús nos enseñó ( Mat. 6:9 ). Y es probable que con frecuencia digamos que Dios es nuestro amigo. Pero debemos hacer las dos cosas siempre con humildad y profundo respeto . ¿Por qué? Porque somos imperfectos. Si podemos sentirnos cerca de Jehová y ser sus amigos no es por nuestros propios méritos, sino únicamente gracias al rescate . Jehová hizo posible mediante Jesús “reconciliar consigo mismo todo lo demás [...] estableciendo la paz mediante la sangre que él derramó en el madero de tormento” ( Col. 1:19, 20 ). Por eso podemos tener una buena relación con Jehová a pesar de ser imperfectos.
 **Ampliar:**
 - [Mateo 6:9](./02-textos-biblicos.md#mateo-6-9)
@@ -245,7 +275,10 @@
 **Idea troncal:** La misericordia de Jehová no anula la verdad sobre el pecado; interviene precisamente porque reconoce nuestra condición desesperada.
 **Aplicación:** Este párrafo permite conectar el rescate con la predicación y con la paciencia de Jehová hacia los que aún pueden responder al mensaje.
 **Resaltado en el texto:** primary: El rescate muestra claramente que Jehová “es rico en misericordia” / secondary: nos dio vida [...] cuando estábamos muertos debido a nuestras ofensas / support: Jehová acude en su auxilio mediante el mensaje del Reino / key: Si Satanás pensó que la desobediencia de Adán y Eva frustró el propósito de Jehová, estaba muy equivocado.
-**Pregunta adicional:** ¿Cómo evita este párrafo que veamos la misericordia de Jehová como una idea abstracta o sentimental?
+**Pregunta adicional:** ¿Cómo muestra este párrafo que la misericordia de Jehová actúa de verdad?
+**Concepto clave:** Misericordia activa
+**Pregunta de concepto:** ¿Cómo muestra este párrafo que la misericordia de Jehová actúa de verdad?
+**Respuesta corta:** Porque no se queda en sentimiento: Jehová da vida, hace llegar el mensaje del Reino y abre el camino para conocerlo.
 **Texto base del párrafo:** 17 El rescate muestra claramente que Jehová “es rico en misericordia” , pues “ nos dio vida [...] cuando estábamos muertos debido a nuestras ofensas ” (lea Efesios 2:4, 5 ). Quienes tienen “la actitud correcta para obtener vida eterna” son conscientes de que están atrapados bajo los escombros del pecado heredado y de que necesitan ser rescatados ( Hech. 13:48 ). Por eso piden ayuda a gritos, y Jehová acude en su auxilio mediante el mensaje del Reino para que puedan llegar a conocerlos a él y a su Hijo ( Juan 17:3 ). Si Satanás pensó que la desobediencia de Adán y Eva frustró el propósito de Jehová, estaba muy equivocado.
 **Ampliar:**
 - [Misericordia](./03-terminos-clave.md#misericordia)

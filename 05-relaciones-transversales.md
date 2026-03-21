@@ -10,7 +10,7 @@
 
 **Apoyos WOL:**
 - it-2 “Pecado”: [directo](https://wol.jw.org/es/wol/pc/r4/lp-s/1204449/73/0) | [búsqueda abreviada](https://wol.jw.org/es/wol/l/r4/lp-s?q=it-2+Pecado)
-- Romanos 6:23: [directo](https://wol.jw.org/es/wol/s/r4/lp-s?p=par&pg=3&q=Romanos+6%3A23&r=occ) | [búsqueda abreviada](https://wol.jw.org/es/wol/l/r4/lp-s?q=Romanos+6%3A23)
+- Romanos 6:23: [directo](https://wol.jw.org/es/wol/l/r4/lp-s?q=Romanos+6%3A23) | [búsqueda abreviada](https://wol.jw.org/es/wol/l/r4/lp-s?q=Romanos+6%3A23)
 - Si Adán era perfecto, ¿cómo fue posible que pecara?: [directo](https://wol.jw.org/es/wol/d/r4/lp-s/2008733) | [búsqueda abreviada](https://wol.jw.org/es/wol/l/r4/lp-s?q=Si+Ad%C3%A1n+era+perfecto%2C+%C2%BFc%C3%B3mo+fue+posible+que+pecara%3F)
 
 ## Justicia, base legal y perdón {#justicia-base-legal-y-perdon}
@@ -43,7 +43,7 @@
 
 **Apoyos WOL:**
 - Romanos 8:20, 21: [directo](https://wol.jw.org/es/wol/l/r4/lp-s?q=Romanos+8%3A20-21) | [búsqueda abreviada](https://wol.jw.org/es/wol/l/r4/lp-s?q=Romanos+8%3A20-21)
-- Hebreos 6:18, 19: [directo](https://wol.jw.org/es/wol/l/r4/lp-s?q=Hebreos+6%3A18-19) | [búsqueda abreviada](https://wol.jw.org/es/wol/l/r4/lp-s?q=Hebreos+6%3A18%2C+19)
+- Hebreos 6:18, 19: [directo](https://wol.jw.org/es/wol/l/r4/lp-s?q=Hebreos+6%3A18%2C+19) | [búsqueda abreviada](https://wol.jw.org/es/wol/l/r4/lp-s?q=Hebreos+6%3A18%2C+19)
 
 ## Desafío de Satanás, santificación y valor mayor del rescate {#desafio-de-satanas-santificacion-y-valor-mayor-del-rescate}
 

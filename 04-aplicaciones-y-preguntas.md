@@ -9,17 +9,17 @@
 
 ## Preguntas adicionales equilibradas
 
-- Párr. 3: ¿Cuál de estas tres bendiciones te ayuda más a valorar la Conmemoración este año?
-- Párr. 6: ¿Por qué fortalece nuestra fe saber que el perdón de Jehová no contradice su justicia, sino que la satisface?
-- Párr. 7: ¿Qué nos enseña el anticipo de los sacrificios sobre el enorme valor del sacrificio de Jesús?
-- Párr. 8: ¿Cómo nos ayuda este párrafo a distinguir entre arrepentimiento sincero y seguir castigándonos cuando Jehová ya perdonó?
-- Párr. 9: ¿Por qué entender el pecado como condición heredada ensancha nuestro aprecio por el rescate?
-- Párr. 12: ¿Cómo fortalece tu aguante diario pensar en la liberación total que describe este párrafo?
-- Párr. 13: ¿Qué prueba actual se vuelve más llevadera cuando meditas en la esperanza que hace posible el rescate?
-- Párr. 14: ¿Por qué el artículo compara el rescate con un puente y qué te enseña eso sobre tu amistad con Jehová?
-- Párr. 15: ¿Cómo te ayuda este párrafo a entender bien la expresión “sacrificio propiciatorio” sin pensar que Jehová tuvo que cambiar de personalidad?
-- Párr. 16: ¿Qué cambia en tu manera de orar y de ver tu amistad con Jehová cuando recuerdas esta base del rescate?
-- Párr. 17: ¿Cómo evita este párrafo que veamos la misericordia de Jehová como una idea abstracta o sentimental?
+- Párr. 3: ¿Por qué conviene ver este párrafo como el mapa del artículo?
+- Párr. 6: ¿Por qué Jehová no podía simplemente pasar por alto el pecado?
+- Párr. 7: ¿Por qué hacía falta una base legal?
+- Párr. 8: ¿Por qué no debemos seguir juzgándonos si Jehová ya perdonó?
+- Párr. 9: ¿Por qué aquí pecado incluye algo que heredamos?
+- Párr. 12: ¿Qué demuestra que la curación del rescate será total?
+- Párr. 13: ¿Cómo actúa hoy la esperanza que hace posible el rescate?
+- Párr. 14: ¿Por qué hacía falta un puente y no solo consuelo?
+- Párr. 15: ¿En qué sentido apaciguó el rescate a Jehová?
+- Párr. 16: ¿Qué protege de la familiaridad excesiva al llamar Padre a Jehová?
+- Párr. 17: ¿Cómo muestra este párrafo que la misericordia de Jehová actúa de verdad?
 
 ## Frases para animar comentarios
 

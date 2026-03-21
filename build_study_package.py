@@ -10,13 +10,14 @@ from email import policy
 from email.parser import BytesParser
 from pathlib import Path
 from typing import Any
-from urllib.parse import quote_plus
+from urllib.parse import parse_qs, quote_plus, urlparse
 
 from bs4 import BeautifulSoup, NavigableString, Tag
 
 
 ROOT = Path(__file__).resolve().parent
 NOTES_PATH = ROOT / "study_notes.json"
+WOL_QUERY_BASE = "https://wol.jw.org/es/wol/l/r4/lp-s?q="
 OUTPUT_HTML = ROOT / "atalaya-rescate-estudio.html"
 OUTPUT_FILES = {
     "source": ROOT / "00-articulo-fuente.md",
@@ -58,7 +59,7 @@ body.study-page {
 .study-shell {
   max-width: 1700px;
   margin: 0 auto;
-  padding: 0.9rem 1rem 5rem;
+  padding: 0.7rem 1rem 4rem;
 }
 
 .study-layout {
@@ -85,6 +86,19 @@ body.study-page {
   margin-inline: 0 !important;
 }
 
+.study-article #article header,
+.study-article #article header > *,
+.study-article #article .contextTtl,
+.study-article #article .scalableui > div,
+.study-article #article img {
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
+.study-article-wrap {
+  overflow: hidden;
+}
+
 .study-article a,
 .study-note-links a,
 .study-ref-list a,
@@ -101,8 +115,12 @@ body.study-page {
 }
 
 .study-article .study-row {
-  margin: 0.9rem 0 1.45rem;
-  padding-inline-start: 0.9rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 1.9rem minmax(290px, 24rem);
+  gap: 0.58rem;
+  align-items: start;
+  margin: 0.52rem 0 0.82rem;
+  padding-inline-start: 0.95rem;
   border-inline-start: 4px solid rgba(111, 29, 27, 0.12);
 }
 
@@ -121,7 +139,7 @@ body.study-page {
 .study-row.is-current {
   background: rgba(255, 248, 232, 0.68);
   border-radius: 14px;
-  padding: 0.75rem 0.8rem 0.95rem 1rem;
+  padding: 0.75rem 0.9rem 1rem 1rem;
   box-shadow: 0 0 0 1px rgba(162, 114, 29, 0.18);
 }
 
@@ -138,6 +156,7 @@ body.study-page {
   font-size: clamp(1.18rem, 1.06rem + 0.72vw, 1.62rem);
   line-height: 1.52;
   max-width: none;
+  grid-column: 1;
 }
 
 .study-question {
@@ -174,63 +193,183 @@ body.study-page {
   background: var(--study-pink);
 }
 
-.study-note {
-  margin-top: 0.8rem;
-  background: #fffdfb;
-  border: 1px solid var(--study-border);
-  border-radius: 14px;
-  box-shadow: 0 8px 18px rgba(51, 42, 35, 0.05);
+.study-note-connector {
+  grid-column: 2;
+  position: relative;
+  align-self: start;
+  min-height: 2.8rem;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.study-note-connector::before {
+  content: "";
+  position: absolute;
+  top: 1.18rem;
+  left: 0.08rem;
+  right: 0.48rem;
+  height: 2px;
+  background: rgba(77, 143, 229, 0.62);
+}
+
+.study-note-connector::after {
+  content: "";
+  position: absolute;
+  top: 0.88rem;
+  right: 0.08rem;
+  border-left: 0.66rem solid rgba(77, 143, 229, 0.8);
+  border-top: 0.38rem solid transparent;
+  border-bottom: 0.38rem solid transparent;
+}
+
+.study-row:hover .study-note-connector::before,
+.study-row:hover .study-note-connector::after,
+.study-row.is-current .study-note-connector::before,
+.study-row.is-current .study-note-connector::after {
+  filter: saturate(1.15);
+  opacity: 1;
+}
+
+.study-note-connector:focus-visible {
+  outline: 2px solid rgba(77, 143, 229, 0.55);
+  outline-offset: 4px;
+  border-radius: 10px;
+}
+
+.study-note-card {
+  grid-column: 3;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 253, 250, 0.98);
+  border: 1px solid rgba(111, 29, 27, 0.14);
+  border-radius: 16px;
+  box-shadow: 0 10px 22px rgba(51, 42, 35, 0.06);
+  padding: 0.68rem 0.72rem 0.74rem;
+  min-width: 0;
+  max-width: 100%;
+  max-height: clamp(12rem, 28vh, 17rem);
   overflow: hidden;
 }
 
-.study-note > summary {
-  list-style: none;
-  cursor: pointer;
+.study-row.is-current .study-note-card {
+  border-color: rgba(162, 114, 29, 0.42);
+  box-shadow: 0 14px 28px rgba(129, 94, 28, 0.12);
+}
+
+.study-note-card.is-target {
+  border-color: rgba(77, 143, 229, 0.52);
+  box-shadow: 0 0 0 2px rgba(77, 143, 229, 0.16), 0 16px 30px rgba(52, 85, 128, 0.14);
+}
+
+.study-row:hover .study-note-card {
+  border-color: rgba(77, 143, 229, 0.36);
+  box-shadow: 0 14px 30px rgba(52, 85, 128, 0.12);
+}
+
+.study-note-head {
   display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  margin-bottom: 0.46rem;
+  flex: 0 0 auto;
+}
+
+.study-note-number {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.8rem;
-  padding: 0.72rem 0.9rem;
-  font-weight: 700;
-  color: var(--study-accent);
-  background: rgba(111, 29, 27, 0.03);
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.75rem;
+  background: rgba(77, 143, 229, 0.12);
+  color: #215d9d;
+  font-weight: 800;
+  font-size: 1.05rem;
+  flex: 0 0 auto;
 }
 
-.study-note > summary::-webkit-details-marker {
-  display: none;
-}
-
-.study-note > summary::after {
-  content: "Abrir";
-  font-size: 0.82rem;
-  font-weight: 600;
+.study-note-question {
+  margin: 0.1rem 0 0;
   color: var(--study-muted);
+  font-size: 0.86rem;
+  line-height: 1.35;
 }
 
-.study-note[open] > summary::after {
-  content: "Cerrar";
+.study-note-meta {
+  min-width: 0;
 }
 
 .study-note-body {
-  padding: 0.95rem 1rem 1rem;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-inline-end: 0.2rem;
+  scrollbar-width: thin;
 }
 
-.study-note-body h4 {
-  margin: 0 0 0.65rem;
+.study-note-body::-webkit-scrollbar {
+  width: 7px;
+}
+
+.study-note-body::-webkit-scrollbar-thumb {
+  background: rgba(111, 29, 27, 0.16);
+  border-radius: 999px;
+}
+
+.study-note-body h4,
+.study-note-section h4 {
+  margin: 0 0 0.35rem;
   color: var(--study-accent);
-  font-size: 1rem;
+  font-size: 0.93rem;
 }
 
-.study-note-body p {
-  margin: 0.5rem 0;
-  font-size: 0.96rem;
+.study-note-body p,
+.study-note-section p {
+  margin: 0.2rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.4;
 }
 
-.study-note .study-badges {
+.study-note-section + .study-note-section {
+  margin-top: 0.68rem;
+  padding-top: 0.64rem;
+  border-top: 1px solid rgba(111, 29, 27, 0.1);
+}
+
+.study-note-section.concept {
+  background: rgba(214, 237, 193, 0.36);
+  border: 1px solid rgba(128, 175, 91, 0.28);
+  border-radius: 12px;
+  padding: 0.75rem 0.78rem;
+}
+
+.study-note-section.scripture {
+  background: rgba(228, 240, 253, 0.38);
+  border-radius: 12px;
+  padding: 0.72rem 0.78rem;
+}
+
+.study-note-section.thread {
+  background: rgba(249, 237, 246, 0.42);
+  border-radius: 12px;
+  padding: 0.72rem 0.78rem;
+}
+
+.study-note-section.application {
+  background: rgba(255, 247, 233, 0.55);
+  border-radius: 12px;
+  padding: 0.72rem 0.78rem;
+}
+
+.study-note .study-badges,
+.study-note-card .study-badges {
   display: flex;
   flex-wrap: wrap;
   gap: 0.42rem;
-  margin-bottom: 0.7rem;
+  margin: 0 0 0.08rem;
 }
 
 .study-badge {
@@ -255,16 +394,27 @@ body.study-page {
   color: #865b12;
 }
 
-.study-note-links,
-.study-ref-list {
-  margin-top: 0.8rem;
-  font-size: 0.92rem;
+.study-note-citations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+  margin-top: 0.45rem;
 }
 
-.study-note-links ul,
-.study-ref-list ul {
-  margin: 0.4rem 0 0;
-  padding-left: 1rem;
+.study-note-citations a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(45, 111, 186, 0.08);
+  color: var(--study-link);
+  font-size: 0.76rem;
+  text-decoration: none;
+}
+
+.study-note-miniquestion {
+  font-weight: 700;
+  color: #233247;
 }
 
 .study-article .groupFootnote,
@@ -282,17 +432,39 @@ body.study-page {
 }
 
 .study-dock {
-  position: fixed;
-  right: 1rem;
-  bottom: 1rem;
-  z-index: 30;
-  width: min(360px, calc(100vw - 1.2rem));
+  position: sticky;
+  top: 3.1rem;
+  z-index: 29;
+  margin: 0 0 0.75rem auto;
+  width: min(310px, 100%);
   background: rgba(255, 253, 250, 0.96);
   border: 1px solid rgba(111, 29, 27, 0.16);
-  border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(34, 28, 24, 0.16);
+  border-radius: 14px;
+  box-shadow: 0 12px 24px rgba(34, 28, 24, 0.12);
   backdrop-filter: blur(10px);
-  padding: 0.8rem 0.85rem 0.9rem;
+  padding: 0.52rem 0.64rem 0.58rem;
+}
+
+.study-top-actions {
+  position: sticky;
+  top: 0.55rem;
+  z-index: 31;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.study-top-actions button {
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 253, 250, 0.96);
+  color: var(--study-accent);
+  padding: 0.44rem 0.76rem;
+  font: inherit;
+  font-weight: 700;
+  box-shadow: 0 10px 18px rgba(34, 28, 24, 0.1);
+  cursor: pointer;
 }
 
 .study-dock-head {
@@ -300,24 +472,24 @@ body.study-page {
   align-items: center;
   justify-content: space-between;
   gap: 0.8rem;
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.34rem;
 }
 
 .study-dock-title {
-  font-size: 0.94rem;
+  font-size: 0.84rem;
   font-weight: 700;
   color: var(--study-accent);
 }
 
 .study-dock-status {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: var(--study-ink);
 }
 
 .study-dock-meta {
-  margin-top: 0.2rem;
+  margin-top: 0.08rem;
   color: var(--study-muted);
-  font-size: 0.84rem;
+  font-size: 0.74rem;
 }
 
 .study-dock button,
@@ -326,7 +498,7 @@ body.study-page {
   border-radius: 999px;
   background: var(--study-accent);
   color: #fff;
-  padding: 0.56rem 0.82rem;
+  padding: 0.44rem 0.72rem;
   font: inherit;
   font-weight: 700;
   cursor: pointer;
@@ -340,13 +512,13 @@ body.study-page {
 
 .study-progress {
   position: relative;
-  margin-top: 0.65rem;
+  margin-top: 0.36rem;
 }
 
 .study-progress-track {
   position: relative;
   display: flex;
-  height: 14px;
+  height: 10px;
   overflow: hidden;
   border-radius: 999px;
   background: rgba(111, 29, 27, 0.08);
@@ -387,16 +559,16 @@ body.study-page {
 .study-progress-scale {
   display: flex;
   justify-content: space-between;
-  margin-top: 0.32rem;
-  font-size: 0.76rem;
+  margin-top: 0.24rem;
+  font-size: 0.68rem;
   color: var(--study-muted);
 }
 
 .study-progress-minutes {
   display: flex;
   justify-content: space-between;
-  margin-top: 0.28rem;
-  font-size: 0.72rem;
+  margin-top: 0.2rem;
+  font-size: 0.62rem;
   color: var(--study-muted);
 }
 
@@ -533,21 +705,25 @@ body.study-page {
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
 }
 
-.study-panel-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem 0.7rem;
-  margin-top: 0.7rem;
-  font-size: 0.9rem;
-}
+@media (max-width: 1220px) {
+  .study-article .study-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.7rem;
+  }
 
-.study-panel-links a {
-  color: var(--study-link);
+  .study-note-connector {
+    display: none;
+  }
+
+  .study-note-card {
+    grid-column: 1;
+    max-height: none;
+  }
 }
 
 @media (max-width: 760px) {
   .study-shell {
-    padding: 0.55rem 0.45rem 5.4rem;
+    padding: 0.55rem 0.45rem 4.2rem;
   }
 
   .study-article-wrap {
@@ -563,10 +739,14 @@ body.study-page {
     padding-inline: 0.7rem;
   }
 
+  .study-top-actions {
+    top: 0.45rem;
+  }
+
   .study-dock {
-    left: 0.45rem;
-    right: 0.45rem;
+    top: 2.8rem;
     width: auto;
+    margin-inline: 0;
   }
 }
 """
@@ -756,6 +936,56 @@ document.getElementById('study-start-now').addEventListener('click', () => {
   applyTimes();
 });
 
+async function toggleFullscreen() {
+  if (!document.fullscreenElement) {
+    await document.documentElement.requestFullscreen();
+  } else {
+    await document.exitFullscreen();
+  }
+}
+
+function updateFullscreenButton() {
+  const button = document.getElementById('study-fullscreen');
+  if (!button) {
+    return;
+  }
+  button.textContent = document.fullscreenElement ? 'Salir pantalla completa' : 'Pantalla completa';
+}
+
+function focusNoteCard(targetId) {
+  const target = document.getElementById(targetId);
+  if (!target) {
+    return;
+  }
+  document.querySelectorAll('.study-note-card.is-target').forEach((card) => {
+    card.classList.remove('is-target');
+  });
+  target.classList.add('is-target');
+  const body = target.querySelector('.study-note-body');
+  if (body) {
+    body.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+  target.focus({ preventScroll: true });
+  window.setTimeout(() => {
+    target.classList.remove('is-target');
+  }, 1800);
+}
+
+document.getElementById('study-fullscreen').addEventListener('click', async () => {
+  try {
+    await toggleFullscreen();
+  } catch (error) {
+    console.error('No se pudo cambiar a pantalla completa.', error);
+  }
+});
+document.addEventListener('fullscreenchange', updateFullscreenButton);
+document.querySelectorAll('.study-note-connector[data-note-target]').forEach((button) => {
+  button.addEventListener('click', () => {
+    focusNoteCard(button.dataset.noteTarget);
+  });
+});
+
 const panel = document.getElementById('study-panel');
 const backdrop = document.getElementById('study-panel-backdrop');
 document.getElementById('study-open-panel').addEventListener('click', () => {
@@ -772,6 +1002,7 @@ backdrop.addEventListener('click', () => {
 });
 
 applyTimes();
+updateFullscreenButton();
 window.setInterval(applyTimes, 30000);
 """
 
@@ -789,7 +1020,22 @@ def md_escape(value: str) -> str:
 
 
 def quote_query(value: str) -> str:
-    return f"https://wol.jw.org/es/wol/l/r4/lp-s?q={quote_plus(value)}"
+    return f"{WOL_QUERY_BASE}{quote_plus(value)}"
+
+
+def normalize_query_href(url: str, query_text: str | None = None) -> str:
+    raw = absolutize(url)
+    if query_text and not raw:
+        return quote_query(query_text)
+    if query_text and ("/wol/s/" in raw or "/wol/l/" in raw or "?q=" in raw):
+        return quote_query(query_text)
+    if "?q=" not in raw:
+        return raw
+    parsed = urlparse(raw)
+    values = parse_qs(parsed.query).get("q")
+    if not values:
+        return raw
+    return quote_query(values[0])
 
 
 def normalize_space(value: str) -> str:
@@ -996,129 +1242,204 @@ def validate_source(article: Tag, footnote: Tag | None, notes: dict[str, Any]) -
         raise SystemExit(f"El total de minutos no suma {notes['timing']['total_minutes']}: {total}")
 
 
-def create_note_box(
+def build_notes_index(notes: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    return {
+        "terms": {slugify(item["term"]): item for item in notes["terms"]},
+        "threads": {slugify(item["title"]): item for item in notes["threads"]},
+        "scriptures": {slugify(item["ref"]): item for item in notes["scriptures"]},
+        "applications": {slugify(item["title"]): item for item in notes.get("applications", [])},
+    }
+
+
+def citation_links(items: list[dict[str, str]], limit: int = 2) -> list[dict[str, str]]:
+    links: list[dict[str, str]] = []
+    for item in items[:limit]:
+        href = item.get("href") or item.get("wol_url")
+        label = item.get("label")
+        if not href and item.get("query_label"):
+            href = quote_query(item["query_label"])
+        if not href or not label:
+            continue
+        links.append(
+            {
+                "label": label,
+                "href": normalize_query_href(href, item.get("query_label")),
+            }
+        )
+    return links
+
+
+def paragraph_scriptures(notes: dict[str, Any], study_number: int) -> list[dict[str, Any]]:
+    priority_order = {"leídos": 0, "adicionales": 1, "complementarios": 2, "otros": 3}
+    rows = [
+        item
+        for item in notes["scriptures"]
+        if study_number in item.get("related_paragraphs", [])
+    ]
+    rows.sort(key=lambda item: (priority_order.get(item["priority"], 99), item["ref"]))
+    return rows
+
+
+def note_insights(
+    info: dict[str, Any],
+    notes: dict[str, Any],
+    index: dict[str, dict[str, Any]],
+) -> dict[str, Any]:
+    insights: dict[str, Any] = {"term": None, "thread": None, "scriptures": []}
+    for link in info.get("note_links", []):
+        href = link.get("href", "")
+        if "#" not in href:
+            continue
+        target, anchor = href.split("#", 1)
+        if target.endswith("03-terminos-clave.md") and insights["term"] is None:
+            term = index["terms"].get(anchor)
+            if term:
+                insights["term"] = {
+                    "title": term["term"],
+                    "text": term["definition"],
+                    "citations": citation_links(term.get("sources", []), limit=2),
+                }
+        elif target.endswith("05-relaciones-transversales.md") and insights["thread"] is None:
+            thread = index["threads"].get(anchor)
+            if thread:
+                insights["thread"] = {
+                    "title": thread["title"],
+                    "text": thread["claim"],
+                    "citations": citation_links(thread.get("support", []), limit=2),
+                }
+
+    for scripture in paragraph_scriptures(notes, info["study_number"])[:2]:
+        insights["scriptures"].append(
+            {
+                "ref": scripture["ref"],
+                "text": scripture["main_relation"],
+                "citations": citation_links(
+                    [
+                        {"label": scripture["ref"], "href": scripture["wol_url"]},
+                        {"label": f"{scripture['ref']} (búsqueda)", "href": scripture["query_url"]},
+                    ],
+                    limit=2,
+                ),
+            }
+        )
+    return insights
+
+
+def append_citation_group(parent: Tag, items: list[dict[str, str]]) -> None:
+    if not items:
+        return
+    group = make_tag("div", attrs={"class": "study-note-citations"})
+    for item in items:
+        link = make_tag(
+            "a",
+            attrs={"href": item["href"], "target": "_blank", "rel": "noopener noreferrer"},
+        )
+        link.string = item["label"]
+        group.append(link)
+    parent.append(group)
+
+
+def make_note_section(title: str, text: str, section_class: str, citations: list[dict[str, str]] | None = None) -> Tag:
+    section = make_tag("section", attrs={"class": f"study-note-section {section_class}".strip()})
+    heading = make_tag("h4")
+    heading.string = title
+    section.append(heading)
+    paragraph = make_tag("p")
+    paragraph.string = text
+    section.append(paragraph)
+    append_citation_group(section, citations or [])
+    return section
+
+
+def create_note_card(
     info: dict[str, Any],
     question_text: str,
-    references: list[dict[str, str]],
+    note_data: dict[str, Any],
 ) -> Tag:
-    details_attrs: dict[str, Any] = {"class": "study-note"}
-    aside = make_tag("details", attrs=details_attrs)
+    note_id = f"study-note-{info['study_number']}"
+    aside = make_tag(
+        "aside",
+        attrs={"class": "study-note-card", "id": note_id, "tabindex": "-1"},
+    )
 
-    summary = make_tag("summary")
-    summary.string = f"Notas de conducción · párr. {info['study_number']}"
-    aside.append(summary)
+    head = make_tag("div", attrs={"class": "study-note-head"})
+    number = make_tag("div", attrs={"class": "study-note-number"})
+    number.string = str(info["study_number"])
+    head.append(number)
 
-    body = make_tag("div", attrs={"class": "study-note-body"})
-    aside.append(body)
-
+    meta = make_tag("div", attrs={"class": "study-note-meta"})
     badges = make_tag("div", attrs={"class": "study-badges"})
     for label, cls in [
         (info["kind"].capitalize(), ""),
-        (f"Párr. {info['study_number']}", "note"),
-        (f"{info['timing_minutes']} min", "time"),
+        (f"{format_minutes(info['timing_minutes'])} min", "time"),
+        (info.get("start_label", "--"), "note"),
     ]:
         badge = make_tag("span", attrs={"class": f"study-badge {cls}".strip()})
         badge.string = label
         badges.append(badge)
-    body.append(badges)
+    meta.append(badges)
+    question = make_tag("p", attrs={"class": "study-note-question"})
+    question.string = question_text
+    meta.append(question)
+    head.append(meta)
+    aside.append(head)
 
-    title = make_tag("h4")
-    title.string = question_text
-    body.append(title)
+    body = make_tag("div", attrs={"class": "study-note-body"})
+    aside.append(body)
 
-    timing_line = make_tag("p")
-    timing_line.append(make_tag("strong"))
-    timing_line.strong.string = "Horario sugerido: "
-    start = make_tag("span", attrs={"data-start-for": str(info["study_number"])})
-    start.string = info.get("start_label", "--")
-    timing_line.append(start)
-    timing_line.append(" · ")
-    range_span = make_tag("span", attrs={"data-range-for": str(info["study_number"])})
-    range_span.string = info.get("range_label", "")
-    timing_line.append(range_span)
-    body.append(timing_line)
+    body.append(make_note_section("Respuesta directa", info["direct_answer"], "response"))
+    body.append(make_note_section("Idea troncal", info["main_point"], "thread"))
 
-    for label, text in [
-        ("Respuesta directa", info["direct_answer"]),
-        ("Idea troncal", info["main_point"]),
-        ("Aplicación", info["application"]),
-    ]:
-        paragraph = make_tag("p")
-        strong = make_tag("strong")
-        strong.string = f"{label}: "
-        paragraph.append(strong)
-        paragraph.append(text)
-        body.append(paragraph)
+    concept_question = info.get("concept_question") or info.get("extra_question")
+    concept_answer = info.get("concept_answer")
+    if concept_question:
+        concept = make_tag("section", attrs={"class": "study-note-section concept"})
+        title = make_tag("h4")
+        title.string = info.get("concept_title", "Concepto clave")
+        concept.append(title)
+        prompt = make_tag("p", attrs={"class": "study-note-miniquestion"})
+        prompt.string = concept_question
+        concept.append(prompt)
+        answer = make_tag("p")
+        answer.string = concept_answer or info["direct_answer"]
+        concept.append(answer)
+        append_citation_group(concept, info.get("concept_sources", []))
+        body.append(concept)
 
-    if info.get("extra_question"):
-        extra = make_tag("p")
-        strong = make_tag("strong")
-        strong.string = "Pregunta adicional: "
-        extra.append(strong)
-        extra.append(info["extra_question"])
-        body.append(extra)
+    if note_data.get("term"):
+        term = note_data["term"]
+        body.append(make_note_section(term["title"], term["text"], "scripture", term["citations"]))
 
-    if references:
-        ref_block = make_tag("div", attrs={"class": "study-ref-list"})
-        title_ref = make_tag("strong")
-        title_ref.string = "Textos relacionados"
-        ref_block.append(title_ref)
-        ref_list = make_tag("ul")
-        for ref in references:
-            li = make_tag("li")
-            link = make_tag(
-                "a",
-                attrs={"href": ref["href"], "target": "_blank", "rel": "noopener noreferrer"},
-            )
-            link.string = ref["label"]
-            li.append(link)
-            ref_list.append(li)
-        ref_block.append(ref_list)
-        body.append(ref_block)
+    if note_data.get("thread"):
+        thread = note_data["thread"]
+        body.append(make_note_section("Relación transversal", thread["text"], "thread", thread["citations"]))
 
-    if info.get("note_links"):
-        notes_list = make_tag("div", attrs={"class": "study-note-links"})
-        title_links = make_tag("strong")
-        title_links.string = "Ampliar"
-        notes_list.append(title_links)
-        ul = make_tag("ul")
-        for link_info in info["note_links"]:
-            li = make_tag("li")
-            link = make_tag("a", attrs={"href": link_info["href"]})
-            link.string = link_info["label"]
-            li.append(link)
-            ul.append(li)
-        notes_list.append(ul)
-        body.append(notes_list)
+    if note_data.get("scriptures"):
+        scripture_section = make_tag("section", attrs={"class": "study-note-section scripture"})
+        heading = make_tag("h4")
+        heading.string = "Textos citados"
+        scripture_section.append(heading)
+        for item in note_data["scriptures"]:
+            paragraph = make_tag("p")
+            strong = make_tag("strong")
+            strong.string = f"{item['ref']}: "
+            paragraph.append(strong)
+            paragraph.append(item["text"])
+            scripture_section.append(paragraph)
+            append_citation_group(scripture_section, item["citations"])
+        body.append(scripture_section)
 
+    body.append(make_note_section("Aplicación", info["application"], "application"))
     return aside
-
-
-def collect_reference_links(paragraph: Tag, question: Tag | None) -> list[dict[str, str]]:
-    found: list[dict[str, str]] = []
-    seen: set[str] = set()
-    for container in [question, paragraph]:
-        if container is None:
-            continue
-        for anchor in container.select("a.b"):
-            href = absolutize(anchor.get("href", ""))
-            label = paragraph_text(anchor)
-            key = normalize_space(label).lower()
-            if not href or key in seen:
-                continue
-            seen.add(key)
-            found.append({"label": label, "href": href})
-    return found
 
 
 def inject_notes(article: Tag, notes: dict[str, Any], questions: dict[str, str]) -> None:
     lookup = build_paragraph_lookup(article)
+    note_index = build_notes_index(notes)
     for info in notes["paragraphs"]:
         paragraph = lookup.get(info["article_pid"])
         if paragraph is None:
             raise SystemExit(f"No encontré el párrafo {info['article_pid']} en el artículo.")
-
-        question = lookup.get(info["question_pid"])
         highlights = info.get("highlights")
         if highlights:
             for item in highlights:
@@ -1139,8 +1460,22 @@ def inject_notes(article: Tag, notes: dict[str, Any], questions: dict[str, str])
         )
         paragraph.wrap(wrapper)
 
-        refs = collect_reference_links(paragraph, question)
-        note_box = create_note_box(info, questions[info["question_pid"]], refs)
+        connector = make_tag(
+            "button",
+            attrs={
+                "class": "study-note-connector",
+                "type": "button",
+                "data-note-target": f"study-note-{info['study_number']}",
+                "aria-label": f"Ir a las notas del párrafo {info['study_number']}",
+                "title": f"Ir a las notas del párr. {info['study_number']}",
+            },
+        )
+        wrapper.append(connector)
+        note_box = create_note_card(
+            info,
+            questions[info["question_pid"]],
+            note_insights(info, notes, note_index),
+        )
         wrapper.append(note_box)
 
     for question in article.select("p.qu"):
@@ -1240,6 +1575,9 @@ def render_control_panel(notes: dict[str, Any]) -> str:
     )
 
     return f"""
+    <div class="study-top-actions">
+      <button id="study-fullscreen" type="button">Pantalla completa</button>
+    </div>
     <div class="study-dock" id="study-dock">
       <div class="study-dock-head">
         <div>
@@ -1334,17 +1672,8 @@ def render_control_panel(notes: dict[str, Any]) -> str:
         </div>
       </div>
       <div class="study-panel-section">
-        <h3>Apoyos rápidos</h3>
+        <h3>Frases para animar comentarios</h3>
         <ul>{prompt_items}</ul>
-        <div class="study-panel-links">
-          <a href="./01-guia-conduccion.md">Guía</a>
-          <a href="./02-textos-biblicos.md">Textos</a>
-          <a href="./03-terminos-clave.md">Términos</a>
-          <a href="./04-aplicaciones-y-preguntas.md">Aplicaciones</a>
-          <a href="./05-relaciones-transversales.md">Relaciones</a>
-          <a href="./06-tiempos-conduccion.md">Tiempos</a>
-          <a href="{notes['meta']['article_url']}" target="_blank" rel="noopener noreferrer">WOL</a>
-        </div>
       </div>
     </aside>
     """
@@ -1520,6 +1849,10 @@ def build_guide_md(notes: dict[str, Any], article: Tag, questions: dict[str, str
         )
         if info.get("extra_question"):
             lines.append(f"**Pregunta adicional:** {info['extra_question']}")
+        if info.get("concept_question"):
+            lines.append(f"**Concepto clave:** {info.get('concept_title', 'Concepto clave')}")
+            lines.append(f"**Pregunta de concepto:** {info['concept_question']}")
+            lines.append(f"**Respuesta corta:** {info.get('concept_answer', info['direct_answer'])}")
         lines.append(f"**Texto base del párrafo:** {paragraph_text(lookup[info['article_pid']])}")
         if info.get("note_links"):
             lines.append("**Ampliar:**")
@@ -1626,6 +1959,8 @@ def build_scriptures_md(notes: dict[str, Any], article: Tag) -> str:
         lines.extend([f"## {heading}", ""])
         for item in groups[label]:
             anchor = slugify(item["ref"])
+            wol_url = normalize_query_href(item["wol_url"], item.get("query_label"))
+            query_url = normalize_query_href(item["query_url"], item["ref"])
             lines.extend(
                 [
                     f"### {item['ref']} {{#{anchor}}}",
@@ -1633,8 +1968,8 @@ def build_scriptures_md(notes: dict[str, Any], article: Tag) -> str:
                     f"**Párrafos relacionados:** {', '.join(str(value) for value in item['related_paragraphs']) or 'Sin asignación manual'}",
                     f"**Relación principal:** {item['main_relation']}",
                     f"**Uso para el conductor:** {item['practical_use']}",
-                    f"**WOL directo:** [{item['wol_url']}]({item['wol_url']})",
-                    f"**Búsqueda abreviada:** [{item['query_url']}]({item['query_url']})",
+                    f"**WOL directo:** [{wol_url}]({wol_url})",
+                    f"**Búsqueda abreviada:** [{query_url}]({query_url})",
                     "",
                 ]
             )
@@ -1666,8 +2001,9 @@ def build_terms_md(notes: dict[str, Any]) -> str:
             ]
         )
         for source in item["sources"]:
-            query_url = source.get("query_url") or quote_query(source["query_label"])
-            lines.append(f"- {source['label']}: [directo]({source['wol_url']}) | [búsqueda abreviada]({query_url})")
+            wol_url = normalize_query_href(source["wol_url"], source.get("query_label"))
+            query_url = normalize_query_href(source.get("query_url", ""), source["query_label"])
+            lines.append(f"- {source['label']}: [directo]({wol_url}) | [búsqueda abreviada]({query_url})")
         lines.append("")
     return "\n".join(lines)
 
@@ -1718,8 +2054,9 @@ def build_threads_md(notes: dict[str, Any]) -> str:
             ]
         )
         for source in item["support"]:
-            query_url = source.get("query_url") or quote_query(source["query_label"])
-            lines.append(f"- {source['label']}: [directo]({source['wol_url']}) | [búsqueda abreviada]({query_url})")
+            wol_url = normalize_query_href(source["wol_url"], source.get("query_label"))
+            query_url = normalize_query_href(source.get("query_url", ""), source["query_label"])
+            lines.append(f"- {source['label']}: [directo]({wol_url}) | [búsqueda abreviada]({query_url})")
         lines.append("")
     return "\n".join(lines)
 
