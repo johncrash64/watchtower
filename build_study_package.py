@@ -116,11 +116,11 @@ body.study-page {
 
 .study-article .study-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 1.9rem minmax(290px, 24rem);
-  gap: 0.58rem;
+  grid-template-columns: minmax(0, 1fr) minmax(230px, 19rem);
+  gap: 0.36rem;
   align-items: start;
   margin: 0.52rem 0 0.82rem;
-  padding-inline-start: 0.95rem;
+  padding-inline-start: 0.5rem;
   border-inline-start: 4px solid rgba(111, 29, 27, 0.12);
 }
 
@@ -159,6 +159,21 @@ body.study-page {
   grid-column: 1;
 }
 
+.study-article .study-para .parNum[data-note-target] {
+  cursor: pointer;
+}
+
+.study-article .study-para .parNum[data-note-target]:hover,
+.study-article .study-para .parNum[data-note-target]:focus-visible {
+  color: #215d9d;
+}
+
+.study-article .study-para .parNum[data-note-target]:focus-visible {
+  outline: 2px solid rgba(77, 143, 229, 0.38);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
 .study-question {
   width: 100%;
   box-sizing: border-box;
@@ -193,65 +208,21 @@ body.study-page {
   background: var(--study-pink);
 }
 
-.study-note-connector {
-  grid-column: 2;
-  position: relative;
-  align-self: start;
-  min-height: 2.8rem;
-  width: 100%;
-  border: 0;
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-}
-
-.study-note-connector::before {
-  content: "";
-  position: absolute;
-  top: 1.18rem;
-  left: 0.08rem;
-  right: 0.48rem;
-  height: 2px;
-  background: rgba(77, 143, 229, 0.62);
-}
-
-.study-note-connector::after {
-  content: "";
-  position: absolute;
-  top: 0.88rem;
-  right: 0.08rem;
-  border-left: 0.66rem solid rgba(77, 143, 229, 0.8);
-  border-top: 0.38rem solid transparent;
-  border-bottom: 0.38rem solid transparent;
-}
-
-.study-row:hover .study-note-connector::before,
-.study-row:hover .study-note-connector::after,
-.study-row.is-current .study-note-connector::before,
-.study-row.is-current .study-note-connector::after {
-  filter: saturate(1.15);
-  opacity: 1;
-}
-
-.study-note-connector:focus-visible {
-  outline: 2px solid rgba(77, 143, 229, 0.55);
-  outline-offset: 4px;
-  border-radius: 10px;
-}
-
 .study-note-card {
-  grid-column: 3;
+  grid-column: 2;
   display: flex;
   flex-direction: column;
   background: rgba(255, 253, 250, 0.98);
   border: 1px solid rgba(111, 29, 27, 0.14);
   border-radius: 16px;
   box-shadow: 0 10px 22px rgba(51, 42, 35, 0.06);
-  padding: 0.68rem 0.72rem 0.74rem;
+  padding: 0.58rem 0.62rem 0.64rem;
   min-width: 0;
+  width: 100%;
   max-width: 100%;
-  max-height: clamp(12rem, 28vh, 17rem);
+  max-height: clamp(11rem, 26vh, 15.5rem);
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .study-row.is-current .study-note-card {
@@ -272,8 +243,8 @@ body.study-page {
 .study-note-head {
   display: flex;
   align-items: flex-start;
-  gap: 0.7rem;
-  margin-bottom: 0.46rem;
+  gap: 0.58rem;
+  margin-bottom: 0.32rem;
   flex: 0 0 auto;
 }
 
@@ -281,21 +252,14 @@ body.study-page {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 0.75rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 0.68rem;
   background: rgba(77, 143, 229, 0.12);
   color: #215d9d;
   font-weight: 800;
-  font-size: 1.05rem;
+  font-size: 0.96rem;
   flex: 0 0 auto;
-}
-
-.study-note-question {
-  margin: 0.1rem 0 0;
-  color: var(--study-muted);
-  font-size: 0.86rem;
-  line-height: 1.35;
 }
 
 .study-note-meta {
@@ -306,7 +270,7 @@ body.study-page {
   min-height: 0;
   overflow-y: auto;
   overscroll-behavior: contain;
-  padding-inline-end: 0.2rem;
+  padding-inline-end: 0.14rem;
   scrollbar-width: thin;
 }
 
@@ -321,21 +285,21 @@ body.study-page {
 
 .study-note-body h4,
 .study-note-section h4 {
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.28rem;
   color: var(--study-accent);
-  font-size: 0.93rem;
+  font-size: 0.84rem;
 }
 
 .study-note-body p,
 .study-note-section p {
-  margin: 0.2rem 0 0;
-  font-size: 0.88rem;
-  line-height: 1.4;
+  margin: 0.16rem 0 0;
+  font-size: 0.8rem;
+  line-height: 1.32;
 }
 
 .study-note-section + .study-note-section {
-  margin-top: 0.68rem;
-  padding-top: 0.64rem;
+  margin-top: 0.5rem;
+  padding-top: 0.48rem;
   border-top: 1px solid rgba(111, 29, 27, 0.1);
 }
 
@@ -343,33 +307,33 @@ body.study-page {
   background: rgba(214, 237, 193, 0.36);
   border: 1px solid rgba(128, 175, 91, 0.28);
   border-radius: 12px;
-  padding: 0.75rem 0.78rem;
+  padding: 0.58rem 0.64rem;
 }
 
 .study-note-section.scripture {
   background: rgba(228, 240, 253, 0.38);
   border-radius: 12px;
-  padding: 0.72rem 0.78rem;
+  padding: 0.58rem 0.64rem;
 }
 
 .study-note-section.thread {
   background: rgba(249, 237, 246, 0.42);
   border-radius: 12px;
-  padding: 0.72rem 0.78rem;
+  padding: 0.58rem 0.64rem;
 }
 
 .study-note-section.application {
   background: rgba(255, 247, 233, 0.55);
   border-radius: 12px;
-  padding: 0.72rem 0.78rem;
+  padding: 0.58rem 0.64rem;
 }
 
 .study-note .study-badges,
 .study-note-card .study-badges {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.42rem;
-  margin: 0 0 0.08rem;
+  gap: 0.34rem;
+  margin: 0;
 }
 
 .study-badge {
@@ -711,10 +675,6 @@ body.study-page {
     gap: 0.7rem;
   }
 
-  .study-note-connector {
-    display: none;
-  }
-
   .study-note-card {
     grid-column: 1;
     max-height: none;
@@ -980,9 +940,15 @@ document.getElementById('study-fullscreen').addEventListener('click', async () =
   }
 });
 document.addEventListener('fullscreenchange', updateFullscreenButton);
-document.querySelectorAll('.study-note-connector[data-note-target]').forEach((button) => {
-  button.addEventListener('click', () => {
-    focusNoteCard(button.dataset.noteTarget);
+document.querySelectorAll('.study-para .parNum[data-note-target]').forEach((marker) => {
+  marker.addEventListener('click', () => {
+    focusNoteCard(marker.dataset.noteTarget);
+  });
+  marker.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      focusNoteCard(marker.dataset.noteTarget);
+    }
   });
 });
 
@@ -1353,7 +1319,6 @@ def make_note_section(title: str, text: str, section_class: str, citations: list
 
 def create_note_card(
     info: dict[str, Any],
-    question_text: str,
     note_data: dict[str, Any],
 ) -> Tag:
     note_id = f"study-note-{info['study_number']}"
@@ -1378,9 +1343,6 @@ def create_note_card(
         badge.string = label
         badges.append(badge)
     meta.append(badges)
-    question = make_tag("p", attrs={"class": "study-note-question"})
-    question.string = question_text
-    meta.append(question)
     head.append(meta)
     aside.append(head)
 
@@ -1433,7 +1395,7 @@ def create_note_card(
     return aside
 
 
-def inject_notes(article: Tag, notes: dict[str, Any], questions: dict[str, str]) -> None:
+def inject_notes(article: Tag, notes: dict[str, Any]) -> None:
     lookup = build_paragraph_lookup(article)
     note_index = build_notes_index(notes)
     for info in notes["paragraphs"]:
@@ -1460,22 +1422,15 @@ def inject_notes(article: Tag, notes: dict[str, Any], questions: dict[str, str])
         )
         paragraph.wrap(wrapper)
 
-        connector = make_tag(
-            "button",
-            attrs={
-                "class": "study-note-connector",
-                "type": "button",
-                "data-note-target": f"study-note-{info['study_number']}",
-                "aria-label": f"Ir a las notas del párrafo {info['study_number']}",
-                "title": f"Ir a las notas del párr. {info['study_number']}",
-            },
-        )
-        wrapper.append(connector)
-        note_box = create_note_card(
-            info,
-            questions[info["question_pid"]],
-            note_insights(info, notes, note_index),
-        )
+        par_num = paragraph.select_one(".parNum")
+        if par_num is not None:
+            par_num["data-note-target"] = f"study-note-{info['study_number']}"
+            par_num["tabindex"] = "0"
+            par_num["role"] = "button"
+            par_num["aria-label"] = f"Ir a las notas del párrafo {info['study_number']}"
+            par_num["title"] = f"Ir a las notas del párr. {info['study_number']}"
+
+        note_box = create_note_card(info, note_insights(info, notes, note_index))
         wrapper.append(note_box)
 
     for question in article.select("p.qu"):
@@ -2104,7 +2059,7 @@ def main() -> None:
 
     questions = question_map(article)
     sections = section_map(article)
-    inject_notes(article, notes, questions)
+    inject_notes(article, notes)
 
     OUTPUT_HTML.write_text(
         build_html(article, footnote, stylesheets, notes, source_file.name),
