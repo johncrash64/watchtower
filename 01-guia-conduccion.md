@@ -117,14 +117,14 @@
 **Tipo:** Troncal
 **Tiempo sugerido:** 3.5 min
 **Pregunta oficial:** 8. ¿En qué podemos pensar antes de asistir a la Conmemoración este año?
-**Respuesta directa:** Antes de la Conmemoración podemos meditar en que Jehová, gracias al rescate, nos perdona de verdad y no quiere que vivamos aplastados por pecados ya arrepentidos.
-**Idea troncal:** El artículo aterriza el rescate en la conciencia cristiana: Jehová puede perdonar de un modo que nosotros a veces tardamos en aceptar.
-**Aplicación:** Este es un buen párrafo para pedir una aplicación práctica, no una confesión personal larga.
-**Resaltado en el texto:** primary: gracias al rescate no tenemos que mortificarnos recordando pecados del pasado de los que ya nos hemos arrepentido / secondary: Jehová es el responsable de perdonar / support: la sangre de su Hijo Jesús nos limpia de todo pecado / key: él está “dispuesto a perdonar”
+**Respuesta directa:** Antes de la Conmemoración podemos pensar en cómo nos beneficia saber que Jehová nos perdona.
+**Idea troncal:** El artículo lleva el rescate al terreno de la conciencia: valorar el perdón de Jehová incluye aprender a creerle cuando dice que realmente nos ha limpiado.
+**Aplicación:** Aquí conviene buscar una aplicación serena: cómo dejar de cargar culpas ya perdonadas, sin convertir el comentario en una confesión larga.
+**Resaltado en el texto:** primary: Antes de asistir a la Conmemoración este año, dediquemos tiempo a pensar en cómo nos beneficia saber que Jehová nos perdona. / secondary: gracias al rescate no tenemos que mortificarnos recordando pecados del pasado de los que ya nos hemos arrepentido / secondary: Jehová es el responsable de perdonar / support: la sangre de su Hijo Jesús nos limpia de todo pecado / key: él está “dispuesto a perdonar”
 **Pregunta adicional:** ¿Por qué no debemos seguir juzgándonos si Jehová ya perdonó?
 **Concepto clave:** Perdón real
 **Pregunta de concepto:** ¿Por qué no debemos seguir juzgándonos si Jehová ya perdonó?
-**Respuesta corta:** Porque Jehová es quien decide sobre el perdón, y el rescate le da base legal para limpiarnos por completo.
+**Respuesta corta:** Porque Jehová es quien emite el veredicto del perdón, y el rescate le da la base para limpiarnos por completo; si él ya perdonó, no debemos retener una culpa que él decidió quitar.
 **Texto base del párrafo:** 8 Antes de asistir a la Conmemoración este año, dediquemos tiempo a pensar en cómo nos beneficia saber que Jehová nos perdona. Por ejemplo, gracias al rescate no tenemos que mortificarnos recordando pecados del pasado de los que ya nos hemos arrepentido . ¿Y si nos cuesta aceptar que él nos ha perdonado? Quizás pensamos: “Aunque Jehová lo haga, yo no soy capaz de perdonarme”. Pero recordemos que Jehová es el responsable de perdonar , y él le ha dado a su Hijo autoridad para juzgarnos. No nos ha encargado a ninguno de nosotros la labor de decidir quién recibirá su misericordia. La Biblia dice: “Si andamos en la luz, [...] la sangre de su Hijo Jesús nos limpia de todo pecado ” ( 1 Juan 1:6, 7 ). Podemos creer en esta enseñanza bíblica tanto como creemos en todas las demás. El rescate le ha dado a Jehová la base legal para mostrarnos misericordia, y su Palabra enseña que él está “dispuesto a perdonar” ( Sal. 86:5 ).
 **Ampliar:**
 - [Perdón](./03-terminos-clave.md#perdon)
@@ -136,13 +136,13 @@
 **Tiempo sugerido:** 4 min
 **Pregunta oficial:** 9. ¿A qué cosas se refiere la palabra pecado ? ( Salmo 51:5 y la nota).
 **Respuesta directa:** La palabra pecado no solo se refiere a lo malo que hacemos, sino también a la imperfección que heredamos desde la concepción.
-**Idea troncal:** Aquí el artículo amplía el sentido del pecado para explicar por qué el rescate no solo perdona culpas, sino que también abre la puerta a la curación total.
-**Aplicación:** Vale la pena ayudar a la congregación a ver la conexión entre pecado heredado, enfermedad, envejecimiento y muerte.
+**Idea troncal:** Aquí el artículo amplía el sentido del pecado: no solo rompe una norma, también describe una condición heredada que desfigura en nosotros lo que Jehová quiso que el ser humano fuera.
+**Aplicación:** Vale la pena ayudar a la congregación a ver por qué el rescate tiene que hacer dos cosas: perdonar lo malo que hacemos y curar la condición imperfecta que heredamos.
 **Resaltado en el texto:** primary: no solo se refiere a algo malo que / primary: hacemos, / primary: sino también a algo que / primary: heredamos / primary: desde el momento en que somos concebidos: la imperfección / secondary: Esta imperfección no solo nos empuja hacia lo malo, sino que también genera en nuestro cuerpo debilidades / support: Esto explica por qué incluso un bebé puede enfermarse y morir a pesar de que no ha hecho nada malo / key: Es una situación en la que estamos todos los descendientes imperfectos de Adán.
 **Pregunta adicional:** ¿Por qué aquí pecado incluye algo que heredamos?
-**Concepto clave:** Pecado heredado
+**Concepto clave:** Pecado e imperfección
 **Pregunta de concepto:** ¿Por qué aquí pecado incluye algo que heredamos?
-**Respuesta corta:** Porque el artículo está explicando que el rescate no solo cubre actos malos, sino también la condición imperfecta que todos recibimos de Adán.
+**Respuesta corta:** Porque muestra que el pecado también es una condición heredada: nos impide reflejar plenamente las cualidades de Jehová y vivir como él quiso para el ser humano; por eso el rescate no solo perdona actos, también abre el camino para restaurarnos.
 **Texto base del párrafo:** 9 En la Biblia, la palabra pecado no solo se refiere a algo malo que hacemos, sino también a algo que heredamos desde el momento en que somos concebidos: la imperfección (lea Salmo 51:5 y la nota). Esta imperfección no solo nos empuja hacia lo malo, sino que también genera en nuestro cuerpo debilidades que nos hacen enfermarnos, envejecer y morir. Esto explica por qué incluso un bebé puede enfermarse y morir a pesar de que no ha hecho nada malo , y por qué sufren y mueren tanto las personas malas como las buenas. Es una situación en la que estamos todos los descendientes imperfectos de Adán.
 **Ampliar:**
 - [Pecado](./03-terminos-clave.md#pecado)

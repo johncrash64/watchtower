@@ -5,12 +5,14 @@ import json
 import re
 import sys
 import unicodedata
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta
 from email import policy
 from email.parser import BytesParser
 from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qs, quote_plus, urlparse
+from urllib.request import Request, urlopen
 
 from bs4 import BeautifulSoup, NavigableString, Tag
 
@@ -27,6 +29,44 @@ OUTPUT_FILES = {
     "applications": ROOT / "04-aplicaciones-y-preguntas.md",
     "threads": ROOT / "05-relaciones-transversales.md",
     "timing": ROOT / "06-tiempos-conduccion.md",
+}
+BIBLE_TOOLTIP_CACHE = ROOT / ".bible_tooltips_cache.json"
+ENABLE_REMOTE_BIBLE_TOOLTIPS = False
+
+BIBLE_BOOK_ALIASES = {
+    "rom": "romanos",
+    "romanos": "romanos",
+    "col": "colosenses",
+    "colosenses": "colosenses",
+    "ecl": "eclesiastes",
+    "eclesiastes": "eclesiastes",
+    "lev": "levitico",
+    "levitico": "levitico",
+    "num": "numeros",
+    "numeros": "numeros",
+    "sal": "salmos",
+    "salmo": "salmos",
+    "salmos": "salmos",
+    "sant": "santiago",
+    "santiago": "santiago",
+    "efes": "efesios",
+    "efesios": "efesios",
+    "is": "isaias",
+    "isaias": "isaias",
+    "gen": "genesis",
+    "genesis": "genesis",
+    "mat": "mateo",
+    "mateo": "mateo",
+    "hech": "hechos",
+    "hechos": "hechos",
+    "juan": "juan",
+    "prov": "proverbios",
+    "proverbios": "proverbios",
+    "1juan": "1juan",
+    "1 juan": "1juan",
+    "1cor": "1corintios",
+    "1 cor": "1corintios",
+    "1corintios": "1corintios",
 }
 
 LOCAL_CSS = """
@@ -112,6 +152,97 @@ body.study-page {
 .study-ref-list a:hover,
 .study-panel a:hover {
   text-decoration: underline;
+}
+
+.study-hover-tooltip {
+  position: fixed;
+  z-index: 90;
+  width: min(34rem, calc(100vw - 1.6rem));
+  background: rgba(255, 255, 255, 0.985);
+  border: 1px solid rgba(111, 29, 27, 0.16);
+  border-radius: 16px;
+  box-shadow: 0 22px 46px rgba(36, 35, 31, 0.22);
+  overflow: hidden;
+}
+
+.study-hover-tooltip[hidden] {
+  display: none;
+}
+
+.study-hover-tooltip-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem 0.75rem;
+  background: #ece8e2;
+  border-bottom: 1px solid rgba(111, 29, 27, 0.1);
+}
+
+.study-hover-tooltip-kicker {
+  margin: 0;
+  font-size: 0.84rem;
+  color: var(--study-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.study-hover-tooltip-title {
+  margin: 0.12rem 0 0;
+  font-size: 1.24rem;
+  line-height: 1.2;
+}
+
+.study-hover-tooltip-title a {
+  color: var(--study-link);
+}
+
+.study-hover-tooltip-subtitle {
+  margin: 0.24rem 0 0;
+  font-size: 0.94rem;
+  color: var(--study-muted);
+}
+
+.study-hover-tooltip-close {
+  border: 0;
+  background: transparent;
+  color: var(--study-muted);
+  font-size: 1.7rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0.1rem;
+}
+
+.study-hover-tooltip-body {
+  max-height: min(26rem, 62vh);
+  overflow: auto;
+  padding: 1rem 1.1rem 1.1rem;
+  scrollbar-width: thin;
+}
+
+.study-hover-tooltip-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.study-hover-tooltip-body::-webkit-scrollbar-thumb {
+  background: rgba(111, 29, 27, 0.16);
+  border-radius: 999px;
+}
+
+.study-hover-tooltip-verse {
+  margin: 0;
+  font-size: 1.07rem;
+  line-height: 1.56;
+}
+
+.study-hover-tooltip-verse + .study-hover-tooltip-verse {
+  margin-top: 0.45rem;
+}
+
+.study-hover-tooltip-verse-num {
+  color: var(--study-link);
+  font-weight: 800;
+  margin-inline-end: 0.42rem;
 }
 
 .study-article .study-row {
@@ -713,6 +844,15 @@ body.study-page {
 
 LOCAL_JS = """
 const timingConfig = JSON.parse(document.getElementById('study-timing-data').textContent);
+const bibleTooltipData = JSON.parse(document.getElementById('study-bible-tooltip-data')?.textContent || '{}');
+const bibleTooltip = document.getElementById('study-hover-tooltip');
+const bibleTooltipTitle = document.getElementById('study-hover-tooltip-title');
+const bibleTooltipSubtitle = document.getElementById('study-hover-tooltip-subtitle');
+const bibleTooltipBody = document.getElementById('study-hover-tooltip-body');
+const bibleTooltipClose = document.getElementById('study-hover-tooltip-close');
+let bibleTooltipShowTimer = null;
+let bibleTooltipHideTimer = null;
+let currentTooltipTrigger = null;
 
 function formatTime(date) {
   return date.toLocaleTimeString('es-BO', {
@@ -724,6 +864,122 @@ function formatTime(date) {
 
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
+}
+
+function clearBibleTooltipTimers() {
+  window.clearTimeout(bibleTooltipShowTimer);
+  window.clearTimeout(bibleTooltipHideTimer);
+}
+
+function hideBibleTooltip() {
+  clearBibleTooltipTimers();
+  if (!bibleTooltip) {
+    return;
+  }
+  bibleTooltip.hidden = true;
+  currentTooltipTrigger = null;
+}
+
+function positionBibleTooltip(trigger) {
+  if (!bibleTooltip || !trigger) {
+    return;
+  }
+  const rect = trigger.getBoundingClientRect();
+  const margin = 12;
+  const width = bibleTooltip.offsetWidth;
+  const height = bibleTooltip.offsetHeight;
+  const left = clamp(rect.left + (rect.width / 2) - (width / 2), margin, window.innerWidth - width - margin);
+  let top = rect.bottom + 12;
+  if (top + height > window.innerHeight - margin) {
+    top = rect.top - height - 12;
+  }
+  if (top < margin) {
+    top = margin;
+  }
+  bibleTooltip.style.left = `${left}px`;
+  bibleTooltip.style.top = `${top}px`;
+}
+
+function renderBibleTooltip(trigger) {
+  if (!bibleTooltip) {
+    return;
+  }
+  const key = trigger.dataset.studyTooltipKey;
+  const payload = bibleTooltipData[key];
+  if (!payload) {
+    return;
+  }
+
+  bibleTooltipTitle.textContent = payload.title || trigger.textContent.trim();
+  bibleTooltipTitle.href = payload.href || trigger.href || '#';
+  bibleTooltipSubtitle.textContent = payload.subtitle || '';
+  bibleTooltipBody.innerHTML = '';
+
+  (payload.verses || []).forEach((verse) => {
+    const paragraph = document.createElement('p');
+    paragraph.className = 'study-hover-tooltip-verse';
+    const number = document.createElement('span');
+    number.className = 'study-hover-tooltip-verse-num';
+    number.textContent = `${verse.number}`;
+    paragraph.appendChild(number);
+    paragraph.append(document.createTextNode(verse.text));
+    bibleTooltipBody.appendChild(paragraph);
+  });
+
+  bibleTooltip.hidden = false;
+  currentTooltipTrigger = trigger;
+  positionBibleTooltip(trigger);
+}
+
+function queueBibleTooltip(trigger) {
+  clearBibleTooltipTimers();
+  bibleTooltipShowTimer = window.setTimeout(() => {
+    renderBibleTooltip(trigger);
+  }, 720);
+}
+
+function queueBibleTooltipHide() {
+  clearBibleTooltipTimers();
+  bibleTooltipHideTimer = window.setTimeout(() => {
+    hideBibleTooltip();
+  }, 180);
+}
+
+function bindBibleTooltips() {
+  if (!bibleTooltip) {
+    return;
+  }
+
+  document.querySelectorAll('[data-study-tooltip-key]').forEach((trigger) => {
+    trigger.addEventListener('mouseenter', () => queueBibleTooltip(trigger));
+    trigger.addEventListener('mouseleave', () => queueBibleTooltipHide());
+    trigger.addEventListener('focus', () => renderBibleTooltip(trigger));
+    trigger.addEventListener('blur', () => queueBibleTooltipHide());
+  });
+
+  bibleTooltip.addEventListener('mouseenter', () => {
+    clearBibleTooltipTimers();
+  });
+  bibleTooltip.addEventListener('mouseleave', () => {
+    queueBibleTooltipHide();
+  });
+
+  bibleTooltipClose?.addEventListener('click', hideBibleTooltip);
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      hideBibleTooltip();
+    }
+  });
+  window.addEventListener('resize', () => {
+    if (!bibleTooltip.hidden && currentTooltipTrigger) {
+      positionBibleTooltip(currentTooltipTrigger);
+    }
+  });
+  document.addEventListener('scroll', () => {
+    if (!bibleTooltip.hidden && currentTooltipTrigger) {
+      positionBibleTooltip(currentTooltipTrigger);
+    }
+  }, true);
 }
 
 function buildSchedule(start) {
@@ -967,6 +1223,7 @@ backdrop.addEventListener('click', () => {
   backdrop.hidden = true;
 });
 
+bindBibleTooltips();
 applyTimes();
 updateFullscreenButton();
 window.setInterval(applyTimes, 30000);
@@ -1050,6 +1307,232 @@ def absolutize(url: str) -> str:
     if url.startswith("/"):
         return f"https://wol.jw.org{url}"
     return url
+
+
+def load_bible_tooltip_cache() -> dict[str, Any]:
+    if not BIBLE_TOOLTIP_CACHE.exists():
+        return {"chapters": {}, "tooltips": {}}
+    try:
+        cache = json.loads(BIBLE_TOOLTIP_CACHE.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {"chapters": {}, "tooltips": {}}
+    cache.setdefault("chapters", {})
+    cache.setdefault("tooltips", {})
+    return cache
+
+
+def save_bible_tooltip_cache(cache: dict[str, Any]) -> None:
+    BIBLE_TOOLTIP_CACHE.write_text(
+        json.dumps(cache, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
+
+def strip_trailing_reference_punctuation(label: str) -> str:
+    return normalize_space(label).rstrip(";,.)] ")
+
+
+def canonicalize_bible_book(book: str) -> str:
+    raw = unicodedata.normalize("NFKD", book)
+    raw = "".join(ch for ch in raw if not unicodedata.combining(ch))
+    raw = raw.lower().replace(".", "")
+    raw = re.sub(r"\s+", " ", raw).strip()
+    compact = raw.replace(" ", "")
+    return BIBLE_BOOK_ALIASES.get(raw) or BIBLE_BOOK_ALIASES.get(compact) or compact
+
+
+def parse_reference_label(label: str) -> dict[str, Any] | None:
+    cleaned = strip_trailing_reference_punctuation(label)
+    cleaned = cleaned.replace("\u2011", "-").replace("\u2013", "-").replace("\u2014", "-")
+    match = re.match(r"^(?P<book>.+?)\s*(?P<chapter>\d+):(?P<verses>[\d,\- ]+)$", cleaned)
+    if not match:
+        return None
+    book = normalize_space(match.group("book"))
+    if not re.search(r"[A-Za-zÁÉÍÓÚÑáéíóúñ]", book):
+        return None
+    chapter = int(match.group("chapter"))
+    verse_spec = normalize_space(match.group("verses"))
+    verse_numbers: list[int] = []
+    for part in verse_spec.split(","):
+        piece = part.strip()
+        if not piece:
+            continue
+        if "-" in piece:
+            start_raw, end_raw = piece.split("-", 1)
+            start = int(start_raw.strip())
+            end = int(end_raw.strip())
+            if end < start:
+                continue
+            verse_numbers.extend(range(start, end + 1))
+            continue
+        verse_numbers.append(int(piece))
+    if not verse_numbers:
+        return None
+    return {
+        "display_title": cleaned,
+        "book": book,
+        "chapter": chapter,
+        "verse_numbers": verse_numbers,
+        "chapter_key": f"{canonicalize_bible_book(book)}:{chapter}",
+    }
+
+
+def extract_verse_text(span: Tag) -> str:
+    clone = BeautifulSoup(str(span), "lxml").find("span")
+    if clone is None:
+        return ""
+    for anchor in clone.select("a.b, a.fn"):
+        anchor.decompose()
+    verse_anchor = clone.select_one("a.vl, a.cl")
+    if verse_anchor is not None:
+        verse_anchor.decompose()
+    return normalize_space(clone.get_text(" ", strip=True))
+
+
+def fetch_bible_chapter_data(href: str, cache: dict[str, Any], chapter_key: str | None = None) -> dict[str, Any] | None:
+    href = absolutize(href)
+    if chapter_key and chapter_key in cache["chapters"]:
+        return cache["chapters"][chapter_key]
+    if href in cache["chapters"]:
+        return cache["chapters"][href]
+    payload = download_bible_chapter_data(href, chapter_key)
+    if payload is None:
+        return None
+    cache["chapters"][href] = payload
+    final_url = payload.get("url")
+    if final_url:
+        cache["chapters"][final_url] = payload
+    if chapter_key:
+        cache["chapters"][chapter_key] = payload
+    return payload
+
+
+def download_bible_chapter_data(href: str, chapter_key: str | None = None) -> dict[str, Any] | None:
+    href = absolutize(href)
+    try:
+        request = Request(href, headers={"User-Agent": "Mozilla/5.0"})
+        with urlopen(request, timeout=30) as response:
+            html = response.read().decode("utf-8", errors="ignore")
+            final_url = response.geturl()
+    except Exception:
+        return None
+
+    soup = BeautifulSoup(html, "lxml")
+    content_title = ""
+    parent_title = ""
+    content_title_input = soup.find("input", id="contentTitle")
+    parent_title_input = soup.find("input", id="parentTitle")
+    if content_title_input is not None:
+        content_title = normalize_space(content_title_input.get("value", ""))
+    if parent_title_input is not None:
+        parent_title = normalize_space(parent_title_input.get("value", ""))
+
+    verses: dict[str, str] = {}
+    for span in soup.select("span.v[id]"):
+        span_id = span.get("id", "")
+        match = re.match(r"v\d+-\d+-(\d+)-\d+$", span_id)
+        if not match:
+            continue
+        verse_number = match.group(1)
+        verse_text = extract_verse_text(span)
+        if verse_text:
+            verses[verse_number] = verse_text
+
+    if not verses:
+        return None
+
+    payload = {
+        "content_title": content_title,
+        "parent_title": parent_title or "La Biblia. Traducción del Nuevo Mundo (edición de estudio)",
+        "verses": verses,
+        "url": final_url or href,
+    }
+    return payload
+
+
+def build_bible_tooltips(article: Tag) -> dict[str, dict[str, Any]]:
+    cache = load_bible_tooltip_cache()
+    tooltip_map: dict[str, dict[str, Any]] = {}
+    assigned: dict[str, str] = {}
+    cache_changed = False
+    pending_chapters: dict[str, str] = {}
+    prepared_links: list[tuple[Tag, str, dict[str, Any]]] = []
+
+    for anchor in article.select("p.themeScrp a.b[href], p.qu a.b[href], p strong a.b[href]"):
+        if anchor.find_parent("aside", class_="study-note-card") is not None:
+            continue
+        label = normalize_space(anchor.get_text(" ", strip=True))
+        parsed = parse_reference_label(label)
+        if parsed is None:
+            continue
+
+        href = absolutize(anchor.get("href", ""))
+        if not href:
+            continue
+        prepared_links.append((anchor, href, parsed))
+        if parsed["chapter_key"] not in cache["chapters"]:
+            pending_chapters.setdefault(parsed["chapter_key"], href)
+
+    if pending_chapters:
+        with ThreadPoolExecutor(max_workers=6) as executor:
+            futures = {
+                executor.submit(download_bible_chapter_data, href, chapter_key): (chapter_key, href)
+                for chapter_key, href in pending_chapters.items()
+            }
+            for future in as_completed(futures):
+                chapter_key, href = futures[future]
+                try:
+                    payload = future.result()
+                except Exception:
+                    payload = None
+                if payload is None:
+                    continue
+                cache["chapters"][chapter_key] = payload
+                cache["chapters"][href] = payload
+                final_url = payload.get("url")
+                if final_url:
+                    cache["chapters"][final_url] = payload
+                cache_changed = True
+
+    for anchor, href, parsed in prepared_links:
+        cache_key = f"{href}|{parsed['display_title']}"
+        tooltip_key = assigned.get(cache_key)
+        if tooltip_key:
+            anchor["data-study-tooltip-key"] = tooltip_key
+            continue
+
+        tooltip_payload = cache["tooltips"].get(cache_key)
+        if tooltip_payload is None:
+            chapter = fetch_bible_chapter_data(href, cache, parsed["chapter_key"])
+            if chapter is None:
+                continue
+            cache_changed = True
+            verses = []
+            for verse_number in parsed["verse_numbers"]:
+                verse_text = chapter["verses"].get(str(verse_number))
+                if verse_text:
+                    verses.append({"number": verse_number, "text": verse_text})
+            if not verses:
+                continue
+            tooltip_payload = {
+                "heading": "Pasaje bíblico citado",
+                "title": parsed["display_title"],
+                "subtitle": chapter["parent_title"],
+                "href": href,
+                "verses": verses,
+            }
+            cache["tooltips"][cache_key] = tooltip_payload
+            cache_changed = True
+
+        tooltip_key = f"study-bible-tooltip-{len(tooltip_map) + 1}"
+        tooltip_map[tooltip_key] = tooltip_payload
+        assigned[cache_key] = tooltip_key
+        anchor["data-study-tooltip-key"] = tooltip_key
+        anchor["data-study-tooltip-trigger"] = "hover"
+
+    if cache_changed:
+        save_bible_tooltip_cache(cache)
+    return tooltip_map
 
 
 def extract_source(html: str) -> tuple[BeautifulSoup, Tag, Tag | None, list[str]]:
@@ -1674,7 +2157,27 @@ def build_html(
     article_card.append(article_section)
 
     article_fragment = clone_fragment(article)
+    # Disabled for now to keep builds fast; re-enable when there is time to warm the cache from WOL.
+    bible_tooltips = build_bible_tooltips(article_fragment) if ENABLE_REMOTE_BIBLE_TOOLTIPS else {}
     article_section.append(article_fragment)
+
+    tooltip_shell = BeautifulSoup(
+        """
+        <div class="study-hover-tooltip" id="study-hover-tooltip" hidden>
+          <div class="study-hover-tooltip-head">
+            <div>
+              <p class="study-hover-tooltip-kicker" id="study-hover-tooltip-kicker">Pasaje bíblico citado</p>
+              <h3 class="study-hover-tooltip-title"><a id="study-hover-tooltip-title" href="#" rel="noopener noreferrer" target="_blank"></a></h3>
+              <p class="study-hover-tooltip-subtitle" id="study-hover-tooltip-subtitle"></p>
+            </div>
+            <button class="study-hover-tooltip-close" id="study-hover-tooltip-close" type="button" aria-label="Cerrar vista previa">×</button>
+          </div>
+          <div class="study-hover-tooltip-body" id="study-hover-tooltip-body"></div>
+        </div>
+        """,
+        "lxml",
+    )
+    body.append(tooltip_shell.body.div)
 
     timing_data = base.new_tag("script", id="study-timing-data", type="application/json")
     timing_data.string = json.dumps(
@@ -1696,6 +2199,9 @@ def build_html(
         ensure_ascii=False,
     )
     body.append(timing_data)
+    tooltip_data = base.new_tag("script", id="study-bible-tooltip-data", type="application/json")
+    tooltip_data.string = json.dumps(bible_tooltips, ensure_ascii=False)
+    body.append(tooltip_data)
     script = base.new_tag("script")
     script.string = LOCAL_JS
     body.append(script)

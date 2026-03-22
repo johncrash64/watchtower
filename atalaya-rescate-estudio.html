@@ -84,6 +84,97 @@ body.study-page {
   text-decoration: underline;
 }
 
+.study-hover-tooltip {
+  position: fixed;
+  z-index: 90;
+  width: min(34rem, calc(100vw - 1.6rem));
+  background: rgba(255, 255, 255, 0.985);
+  border: 1px solid rgba(111, 29, 27, 0.16);
+  border-radius: 16px;
+  box-shadow: 0 22px 46px rgba(36, 35, 31, 0.22);
+  overflow: hidden;
+}
+
+.study-hover-tooltip[hidden] {
+  display: none;
+}
+
+.study-hover-tooltip-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem 0.75rem;
+  background: #ece8e2;
+  border-bottom: 1px solid rgba(111, 29, 27, 0.1);
+}
+
+.study-hover-tooltip-kicker {
+  margin: 0;
+  font-size: 0.84rem;
+  color: var(--study-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.study-hover-tooltip-title {
+  margin: 0.12rem 0 0;
+  font-size: 1.24rem;
+  line-height: 1.2;
+}
+
+.study-hover-tooltip-title a {
+  color: var(--study-link);
+}
+
+.study-hover-tooltip-subtitle {
+  margin: 0.24rem 0 0;
+  font-size: 0.94rem;
+  color: var(--study-muted);
+}
+
+.study-hover-tooltip-close {
+  border: 0;
+  background: transparent;
+  color: var(--study-muted);
+  font-size: 1.7rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0.1rem;
+}
+
+.study-hover-tooltip-body {
+  max-height: min(26rem, 62vh);
+  overflow: auto;
+  padding: 1rem 1.1rem 1.1rem;
+  scrollbar-width: thin;
+}
+
+.study-hover-tooltip-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.study-hover-tooltip-body::-webkit-scrollbar-thumb {
+  background: rgba(111, 29, 27, 0.16);
+  border-radius: 999px;
+}
+
+.study-hover-tooltip-verse {
+  margin: 0;
+  font-size: 1.07rem;
+  line-height: 1.56;
+}
+
+.study-hover-tooltip-verse + .study-hover-tooltip-verse {
+  margin-top: 0.45rem;
+}
+
+.study-hover-tooltip-verse-num {
+  color: var(--study-link);
+  font-weight: 800;
+  margin-inline-end: 0.42rem;
+}
+
 .study-article .study-row {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(230px, 19rem);
@@ -826,10 +917,10 @@ body.study-page {
 </div>
 <hr class="du-width--oneQuarter du-borderColor--maroon-700 du-borderWidth--2 du-margin-top--0 du-margin-bottom--8"/>
 <p class="qu study-question" data-pid="48" id="p48"> <strong>8.</strong> ¿En qué podemos pensar antes de asistir a la Conmemoración este año?</p>
-<div class="study-row troncal" id="study-row-8"><p class="study-para" data-pid="15" data-rel-pid="[48]" data-study-number="8" id="p15"><span aria-label="Ir a las notas del párrafo 8" class="parNum" data-note-target="study-note-8" data-pnum="8" role="button" tabindex="0" title="Ir a las notas del párr. 8"><strong><sup>8</sup></strong></span> Antes de asistir a la Conmemoración este año, dediquemos tiempo a pensar en cómo nos beneficia saber que Jehová nos perdona. Por ejemplo, <span class="study-mark study-mark-primary">gracias al rescate no tenemos que mortificarnos recordando pecados del pasado de los que ya nos hemos arrepentido</span>. ¿Y si nos cuesta aceptar que él nos ha perdonado? Quizás pensamos: “Aunque Jehová lo haga, <strong><em>yo</em></strong> no soy capaz de perdonarme”. Pero recordemos que <span class="study-mark study-mark-secondary">Jehová es el responsable de perdonar</span>, y él le ha dado a su Hijo autoridad para juzgarnos. No nos ha encargado a ninguno de nosotros la labor de decidir quién recibirá su misericordia. La Biblia dice: “Si andamos en la luz, [...] <strong><em><span class="study-mark study-mark-support">la sangre de su Hijo Jesús nos limpia de todo pecado</span></em></strong>” (<a class="b" data-bid="15-1" href="https://wol.jw.org/es/wol/bc/r4/lp-s/2026243/14/0">1 Juan 1:6, 7</a>). Podemos creer en esta enseñanza bíblica tanto como creemos en todas las demás. El rescate le ha dado a Jehová la base legal para mostrarnos misericordia, y su Palabra enseña que <span class="study-mark study-mark-key">él está “dispuesto a perdonar”</span> (<a class="b" data-bid="16-1" href="https://wol.jw.org/es/wol/bc/r4/lp-s/2026243/15/0">Sal. 86:5</a>).</p><aside class="study-note-card" id="study-note-8" tabindex="-1"><div class="study-note-head"><div class="study-note-number">8</div><div class="study-note-meta"><div class="study-badges"><span class="study-badge">Troncal</span><span class="study-badge time">3.5 min</span><span class="study-badge note">5:19 p. m.</span></div></div></div><div class="study-note-body"><section class="study-note-section response"><h4>Respuesta directa</h4><p>Antes de la Conmemoración podemos meditar en que Jehová, gracias al rescate, nos perdona de verdad y no quiere que vivamos aplastados por pecados ya arrepentidos.</p></section><section class="study-note-section thread"><h4>Idea troncal</h4><p>El artículo aterriza el rescate en la conciencia cristiana: Jehová puede perdonar de un modo que nosotros a veces tardamos en aceptar.</p></section><section class="study-note-section concept"><h4>Perdón real</h4><p class="study-note-miniquestion">¿Por qué no debemos seguir juzgándonos si Jehová ya perdonó?</p><p>Porque Jehová es quien decide sobre el perdón, y el rescate le da base legal para limpiarnos por completo.</p><div class="study-note-citations"><a href="https://wol.jw.org/es/wol/l/r4/lp-s?q=1+Juan+1%3A6-7" rel="noopener noreferrer" target="_blank">1 Juan 1:6, 7</a><a href="https://wol.jw.org/es/wol/l/r4/lp-s?q=Salmo+86%3A5" rel="noopener noreferrer" target="_blank">Sal. 86:5</a></div></section><section class="study-note-section scripture"><h4>Perdón</h4><p>La decisión de Jehová de no seguir imputando el pecado al pecador arrepentido, sobre la base del sacrificio de Jesús.</p><div class="study-note-citations"><a href="https://wol.jw.org/es/wol/l/r4/lp-s?q=Efesios+1%3A7" rel="noopener noreferrer" target="_blank">Efesios 1:7</a><a href="https://wol.jw.org/es/wol/l/r4/lp-s?q=1+Juan+1%3A6%2C+7" rel="noopener noreferrer" target="_blank">1 Juan 1:6, 7</a></div></section><section class="study-note-section scripture"><h4>Textos citados</h4><p><strong>1 Juan 1:6, 7: </strong>Confirma que la sangre de Jesús realmente limpia de todo pecado a quienes andan en la luz.</p><div class="study-note-citations"><a href="https://wol.jw.org/es/wol/bc/r4/lp-s/2026243/14/0" rel="noopener noreferrer" target="_blank">1 Juan 1:6, 7</a><a href="https://wol.jw.org/es/wol/l/r4/lp-s?q=1+Juan+1%3A6-7" rel="noopener noreferrer" target="_blank">1 Juan 1:6, 7 (búsqueda)</a></div></section><section class="study-note-section application"><h4>Aplicación</h4><p>Este es un buen párrafo para pedir una aplicación práctica, no una confesión personal larga.</p></section></div></aside></div>
+<div class="study-row troncal" id="study-row-8"><p class="study-para" data-pid="15" data-rel-pid="[48]" data-study-number="8" id="p15"><span aria-label="Ir a las notas del párrafo 8" class="parNum" data-note-target="study-note-8" data-pnum="8" role="button" tabindex="0" title="Ir a las notas del párr. 8"><strong><sup>8</sup></strong></span> <span class="study-mark study-mark-primary">Antes de asistir a la Conmemoración este año, dediquemos tiempo a pensar en cómo nos beneficia saber que Jehová nos perdona.</span> Por ejemplo, <span class="study-mark study-mark-secondary">gracias al rescate no tenemos que mortificarnos recordando pecados del pasado de los que ya nos hemos arrepentido</span>. ¿Y si nos cuesta aceptar que él nos ha perdonado? Quizás pensamos: “Aunque Jehová lo haga, <strong><em>yo</em></strong> no soy capaz de perdonarme”. Pero recordemos que <span class="study-mark study-mark-secondary">Jehová es el responsable de perdonar</span>, y él le ha dado a su Hijo autoridad para juzgarnos. No nos ha encargado a ninguno de nosotros la labor de decidir quién recibirá su misericordia. La Biblia dice: “Si andamos en la luz, [...] <strong><em><span class="study-mark study-mark-support">la sangre de su Hijo Jesús nos limpia de todo pecado</span></em></strong>” (<a class="b" data-bid="15-1" href="https://wol.jw.org/es/wol/bc/r4/lp-s/2026243/14/0">1 Juan 1:6, 7</a>). Podemos creer en esta enseñanza bíblica tanto como creemos en todas las demás. El rescate le ha dado a Jehová la base legal para mostrarnos misericordia, y su Palabra enseña que <span class="study-mark study-mark-key">él está “dispuesto a perdonar”</span> (<a class="b" data-bid="16-1" href="https://wol.jw.org/es/wol/bc/r4/lp-s/2026243/15/0">Sal. 86:5</a>).</p><aside class="study-note-card" id="study-note-8" tabindex="-1"><div class="study-note-head"><div class="study-note-number">8</div><div class="study-note-meta"><div class="study-badges"><span class="study-badge">Troncal</span><span class="study-badge time">3.5 min</span><span class="study-badge note">5:19 p. m.</span></div></div></div><div class="study-note-body"><section class="study-note-section response"><h4>Respuesta directa</h4><p>Antes de la Conmemoración podemos pensar en cómo nos beneficia saber que Jehová nos perdona.</p></section><section class="study-note-section thread"><h4>Idea troncal</h4><p>El artículo lleva el rescate al terreno de la conciencia: valorar el perdón de Jehová incluye aprender a creerle cuando dice que realmente nos ha limpiado.</p></section><section class="study-note-section concept"><h4>Perdón real</h4><p class="study-note-miniquestion">¿Por qué no debemos seguir juzgándonos si Jehová ya perdonó?</p><p>Porque Jehová es quien emite el veredicto del perdón, y el rescate le da la base para limpiarnos por completo; si él ya perdonó, no debemos retener una culpa que él decidió quitar.</p><div class="study-note-citations"><a href="https://wol.jw.org/es/wol/l/r4/lp-s?q=1+Juan+1%3A6-7" rel="noopener noreferrer" target="_blank">1 Juan 1:6, 7</a><a href="https://wol.jw.org/es/wol/l/r4/lp-s?q=Salmo+86%3A5" rel="noopener noreferrer" target="_blank">Sal. 86:5</a></div></section><section class="study-note-section scripture"><h4>Perdón</h4><p>La decisión de Jehová de no seguir imputando el pecado al pecador arrepentido, sobre la base del sacrificio de Jesús.</p><div class="study-note-citations"><a href="https://wol.jw.org/es/wol/l/r4/lp-s?q=Efesios+1%3A7" rel="noopener noreferrer" target="_blank">Efesios 1:7</a><a href="https://wol.jw.org/es/wol/l/r4/lp-s?q=1+Juan+1%3A6%2C+7" rel="noopener noreferrer" target="_blank">1 Juan 1:6, 7</a></div></section><section class="study-note-section scripture"><h4>Textos citados</h4><p><strong>1 Juan 1:6, 7: </strong>Confirma que la sangre de Jesús realmente limpia de todo pecado a quienes andan en la luz.</p><div class="study-note-citations"><a href="https://wol.jw.org/es/wol/bc/r4/lp-s/2026243/14/0" rel="noopener noreferrer" target="_blank">1 Juan 1:6, 7</a><a href="https://wol.jw.org/es/wol/l/r4/lp-s?q=1+Juan+1%3A6-7" rel="noopener noreferrer" target="_blank">1 Juan 1:6, 7 (búsqueda)</a></div></section><section class="study-note-section application"><h4>Aplicación</h4><p>Aquí conviene buscar una aplicación serena: cómo dejar de cargar culpas ya perdonadas, sin convertir el comentario en una confesión larga.</p></section></div></aside></div>
 <h2 class="du-color--coolGray-700 du-textAlign--center" data-pid="16" id="p16"><strong>HACE POSIBLE NUESTRA CURACIÓN FÍSICA Y EMOCIONAL</strong></h2>
 <p class="qu study-question" data-pid="50" id="p50"> <strong>9.</strong> ¿A qué cosas se refiere la palabra <em>pecado</em>? (<a class="b" data-bid="42-1" href="https://wol.jw.org/es/wol/bc/r4/lp-s/2026243/41/0">Salmo 51:5</a> y la nota).</p>
-<div class="study-row troncal" id="study-row-9"><p class="study-para" data-pid="17" data-rel-pid="[50]" data-study-number="9" id="p17"><span aria-label="Ir a las notas del párrafo 9" class="parNum" data-note-target="study-note-9" data-pnum="9" role="button" tabindex="0" title="Ir a las notas del párr. 9"><strong><sup>9</sup></strong></span> En la Biblia, la palabra <em>pecado</em> <span class="study-mark study-mark-primary">no solo se refiere a algo malo que</span> <strong><em><span class="study-mark study-mark-primary">hacemos,</span></em></strong> <span class="study-mark study-mark-primary">sino también a algo que</span> <strong><em><span class="study-mark study-mark-primary">heredamos</span></em></strong> <span class="study-mark study-mark-primary">desde el momento en que somos concebidos: la imperfección</span> <strong>(lea</strong> <a class="b" data-bid="17-1" href="https://wol.jw.org/es/wol/bc/r4/lp-s/2026243/16/0"><strong>Salmo 51:5</strong></a> <strong>y la nota).</strong> <span class="study-mark study-mark-secondary">Esta imperfección no solo nos empuja hacia lo malo, sino que también genera en nuestro cuerpo debilidades</span> que nos hacen <span aria-hidden="true" class="pageNum" data-before-text="17" data-no="17" id="page17" style="display: inline;"></span>enfermarnos, envejecer y morir. <span class="study-mark study-mark-support">Esto explica por qué incluso un bebé puede enfermarse y morir a pesar de que no ha hecho nada malo</span>, y por qué sufren y mueren tanto las personas malas como las buenas. <span class="study-mark study-mark-key">Es una situación en la que estamos todos los descendientes imperfectos de Adán.</span></p><aside class="study-note-card" id="study-note-9" tabindex="-1"><div class="study-note-head"><div class="study-note-number">9</div><div class="study-note-meta"><div class="study-badges"><span class="study-badge">Troncal</span><span class="study-badge time">4 min</span><span class="study-badge note">5:22 p. m.</span></div></div></div><div class="study-note-body"><section class="study-note-section response"><h4>Respuesta directa</h4><p>La palabra pecado no solo se refiere a lo malo que hacemos, sino también a la imperfección que heredamos desde la concepción.</p></section><section class="study-note-section thread"><h4>Idea troncal</h4><p>Aquí el artículo amplía el sentido del pecado para explicar por qué el rescate no solo perdona culpas, sino que también abre la puerta a la curación total.</p></section><section class="study-note-section concept"><h4>Pecado heredado</h4><p class="study-note-miniquestion">¿Por qué aquí pecado incluye algo que heredamos?</p><p>Porque el artículo está explicando que el rescate no solo cubre actos malos, sino también la condición imperfecta que todos recibimos de Adán.</p><div class="study-note-citations"><a href="https://wol.jw.org/es/wol/l/r4/lp-s?q=Salmo+51%3A5" rel="noopener noreferrer" target="_blank">Sal. 51:5</a><a href="https://wol.jw.org/es/wol/l/r4/lp-s?q=it-2+Pecado" rel="noopener noreferrer" target="_blank">it-2 “Pecado”</a></div></section><section class="study-note-section scripture"><h4>Pecado</h4><p>Todo aquello que va contra la personalidad, las normas y la voluntad de Jehová, ya sea como acto, actitud o condición heredada.</p><div class="study-note-citations"><a href="https://wol.jw.org/es/wol/pc/r4/lp-s/1204449/73/0" rel="noopener noreferrer" target="_blank">it-2 “Pecado”</a><a href="https://wol.jw.org/es/wol/d/r4/lp-s/1200275346" rel="noopener noreferrer" target="_blank">Índice “Pecado”</a></div></section><section class="study-note-section scripture"><h4>Textos citados</h4><p><strong>Salmo 51:5: </strong>Aclara que el pecado puede referirse a la condición heredada desde la concepción, no solo a actos concretos.</p><div class="study-note-citations"><a href="https://wol.jw.org/es/wol/bc/r4/lp-s/2026243/16/0" rel="noopener noreferrer" target="_blank">Salmo 51:5</a><a href="https://wol.jw.org/es/wol/l/r4/lp-s?q=Salmo+51%3A5" rel="noopener noreferrer" target="_blank">Salmo 51:5 (búsqueda)</a></div></section><section class="study-note-section application"><h4>Aplicación</h4><p>Vale la pena ayudar a la congregación a ver la conexión entre pecado heredado, enfermedad, envejecimiento y muerte.</p></section></div></aside></div>
+<div class="study-row troncal" id="study-row-9"><p class="study-para" data-pid="17" data-rel-pid="[50]" data-study-number="9" id="p17"><span aria-label="Ir a las notas del párrafo 9" class="parNum" data-note-target="study-note-9" data-pnum="9" role="button" tabindex="0" title="Ir a las notas del párr. 9"><strong><sup>9</sup></strong></span> En la Biblia, la palabra <em>pecado</em> <span class="study-mark study-mark-primary">no solo se refiere a algo malo que</span> <strong><em><span class="study-mark study-mark-primary">hacemos,</span></em></strong> <span class="study-mark study-mark-primary">sino también a algo que</span> <strong><em><span class="study-mark study-mark-primary">heredamos</span></em></strong> <span class="study-mark study-mark-primary">desde el momento en que somos concebidos: la imperfección</span> <strong>(lea</strong> <a class="b" data-bid="17-1" href="https://wol.jw.org/es/wol/bc/r4/lp-s/2026243/16/0"><strong>Salmo 51:5</strong></a> <strong>y la nota).</strong> <span class="study-mark study-mark-secondary">Esta imperfección no solo nos empuja hacia lo malo, sino que también genera en nuestro cuerpo debilidades</span> que nos hacen <span aria-hidden="true" class="pageNum" data-before-text="17" data-no="17" id="page17" style="display: inline;"></span>enfermarnos, envejecer y morir. <span class="study-mark study-mark-support">Esto explica por qué incluso un bebé puede enfermarse y morir a pesar de que no ha hecho nada malo</span>, y por qué sufren y mueren tanto las personas malas como las buenas. <span class="study-mark study-mark-key">Es una situación en la que estamos todos los descendientes imperfectos de Adán.</span></p><aside class="study-note-card" id="study-note-9" tabindex="-1"><div class="study-note-head"><div class="study-note-number">9</div><div class="study-note-meta"><div class="study-badges"><span class="study-badge">Troncal</span><span class="study-badge time">4 min</span><span class="study-badge note">5:22 p. m.</span></div></div></div><div class="study-note-body"><section class="study-note-section response"><h4>Respuesta directa</h4><p>La palabra pecado no solo se refiere a lo malo que hacemos, sino también a la imperfección que heredamos desde la concepción.</p></section><section class="study-note-section thread"><h4>Idea troncal</h4><p>Aquí el artículo amplía el sentido del pecado: no solo rompe una norma, también describe una condición heredada que desfigura en nosotros lo que Jehová quiso que el ser humano fuera.</p></section><section class="study-note-section concept"><h4>Pecado e imperfección</h4><p class="study-note-miniquestion">¿Por qué aquí pecado incluye algo que heredamos?</p><p>Porque muestra que el pecado también es una condición heredada: nos impide reflejar plenamente las cualidades de Jehová y vivir como él quiso para el ser humano; por eso el rescate no solo perdona actos, también abre el camino para restaurarnos.</p><div class="study-note-citations"><a href="https://wol.jw.org/es/wol/l/r4/lp-s?q=Salmo+51%3A5" rel="noopener noreferrer" target="_blank">Sal. 51:5</a><a href="https://wol.jw.org/es/wol/l/r4/lp-s?q=it-2+Pecado" rel="noopener noreferrer" target="_blank">it-2 “Pecado”</a><a href="https://wol.jw.org/es/wol/l/r4/lp-s?q=Imperfecci%C3%B3n" rel="noopener noreferrer" target="_blank">Imperfección</a></div></section><section class="study-note-section scripture"><h4>Pecado</h4><p>Todo aquello que va contra la personalidad, las normas y la voluntad de Jehová, ya sea como acto, actitud o condición heredada.</p><div class="study-note-citations"><a href="https://wol.jw.org/es/wol/pc/r4/lp-s/1204449/73/0" rel="noopener noreferrer" target="_blank">it-2 “Pecado”</a><a href="https://wol.jw.org/es/wol/d/r4/lp-s/1200275346" rel="noopener noreferrer" target="_blank">Índice “Pecado”</a></div></section><section class="study-note-section scripture"><h4>Textos citados</h4><p><strong>Salmo 51:5: </strong>Aclara que el pecado puede referirse a la condición heredada desde la concepción, no solo a actos concretos.</p><div class="study-note-citations"><a href="https://wol.jw.org/es/wol/bc/r4/lp-s/2026243/16/0" rel="noopener noreferrer" target="_blank">Salmo 51:5</a><a href="https://wol.jw.org/es/wol/l/r4/lp-s?q=Salmo+51%3A5" rel="noopener noreferrer" target="_blank">Salmo 51:5 (búsqueda)</a></div></section><section class="study-note-section application"><h4>Aplicación</h4><p>Vale la pena ayudar a la congregación a ver por qué el rescate tiene que hacer dos cosas: perdonar lo malo que hacemos y curar la condición imperfecta que heredamos.</p></section></div></aside></div>
 <p class="qu study-question" data-pid="52" id="p52"><strong>10.</strong> ¿Cómo se sintieron Adán y Eva cuando pecaron y se volvieron imperfectos?</p>
 <div class="study-row introductorio" id="study-row-10"><p class="study-para" data-pid="18" data-rel-pid="[52]" data-study-number="10" id="p18"><span aria-label="Ir a las notas del párrafo 10" class="parNum" data-note-target="study-note-10" data-pnum="10" role="button" tabindex="0" title="Ir a las notas del párr. 10"><strong><sup>10</sup></strong></span> Pensemos en cómo se sintieron Adán y Eva cuando pecaron y se volvieron imperfectos. Tan pronto como violaron la ley de Dios —que estaba “escrita en sus corazones”— <span class="study-mark study-mark-primary">empezaron a sufrir en su interior las terribles consecuencias</span> (<a class="b" data-bid="18-1" href="https://wol.jw.org/es/wol/bc/r4/lp-s/2026243/17/0">Rom. 2:15</a>). Se dieron cuenta de que <span class="study-mark study-mark-key">algo dentro de ellos había cambiado para peor</span>. <span class="study-mark study-mark-secondary">Sintieron la necesidad de tapar ciertas partes de su cuerpo y de esconderse de su Creador</span> como si fueran delincuentes (<a class="b" data-bid="19-1" href="https://wol.jw.org/es/wol/bc/r4/lp-s/2026243/18/0">Gén. 3:7, 8</a>). Por primera vez en su vida, <span class="study-mark study-mark-support">experimentaron culpabilidad, ansiedad, inseguridad, dolor y vergüenza</span>. En mayor o menor medida, estos sentimientos los acompañarían hasta el día de su muerte (<a class="b" data-bid="20-1" href="https://wol.jw.org/es/wol/bc/r4/lp-s/2026243/19/0">Gén. 3:16-19</a>).</p><aside class="study-note-card" id="study-note-10" tabindex="-1"><div class="study-note-head"><div class="study-note-number">10</div><div class="study-note-meta"><div class="study-badges"><span class="study-badge">Introductorio</span><span class="study-badge time">3 min</span><span class="study-badge note">5:26 p. m.</span></div></div></div><div class="study-note-body"><section class="study-note-section response"><h4>Respuesta directa</h4><p>Cuando pecaron, Adán y Eva empezaron a sufrir inmediatamente culpa, ansiedad, inseguridad, dolor y vergüenza.</p></section><section class="study-note-section thread"><h4>Idea troncal</h4><p>La imperfección dañó al ser humano por dentro y por fuera; no solo trajo muerte futura, también dolor emocional presente.</p></section><section class="study-note-section scripture"><h4>Imperfección</h4><p>Condición heredada del pecado adámico que inclina al mal y trae enfermedad, envejecimiento, dolor y muerte.</p><div class="study-note-citations"><a href="https://wol.jw.org/es/wol/l/r4/lp-s?q=Salmo+51%3A5" rel="noopener noreferrer" target="_blank">Salmo 51:5</a><a href="https://wol.jw.org/es/wol/pc/r4/lp-s/1204449/73/0" rel="noopener noreferrer" target="_blank">it-2 “Pecado”</a></div></section><section class="study-note-section thread"><h4>Relación transversal</h4><p>El rescate no solo promete perdón; sostiene el aguante presente porque garantiza la curación completa del futuro.</p><div class="study-note-citations"><a href="https://wol.jw.org/es/wol/l/r4/lp-s?q=Romanos+8%3A20-21" rel="noopener noreferrer" target="_blank">Romanos 8:20, 21</a><a href="https://wol.jw.org/es/wol/l/r4/lp-s?q=Hebreos+6%3A18%2C+19" rel="noopener noreferrer" target="_blank">Hebreos 6:18, 19</a></div></section><section class="study-note-section application"><h4>Aplicación</h4><p>El conductor puede conectar esta parte con el sufrimiento emocional real que hoy experimentan los siervos de Jehová.</p></section></div></aside></div>
 <p class="qu study-question" data-pid="54" id="p54"><strong>11.</strong> ¿Qué efecto tiene en nosotros la imperfección?</p>
@@ -906,8 +997,27 @@ body.study-page {
 </div>
 </div>
 </div>
-</article></div></div></section></div><script id="study-timing-data" type="application/json">{"default_start": "2026-03-21T17:00", "total_minutes": 60, "intro_minutes": 1.5, "closing_minutes": 1.0, "blocks": [{"label": "Párrs. 1-2", "minutes": 4.0, "offset_minutes": 1.5, "range_label": "5:01 p. m. - 5:05 p. m."}, {"label": "Párr. 3", "minutes": 3.0, "offset_minutes": 5.5, "range_label": "5:05 p. m. - 5:08 p. m."}, {"label": "Párrs. 4-5", "minutes": 5.0, "offset_minutes": 8.5, "range_label": "5:08 p. m. - 5:13 p. m."}, {"label": "Párrs. 6-7", "minutes": 5.5, "offset_minutes": 13.5, "range_label": "5:13 p. m. - 5:19 p. m."}, {"label": "Párr. 8", "minutes": 3.5, "offset_minutes": 19.0, "range_label": "5:19 p. m. - 5:22 p. m."}, {"label": "Párr. 9", "minutes": 4.0, "offset_minutes": 22.5, "range_label": "5:22 p. m. - 5:26 p. m."}, {"label": "Párr. 10", "minutes": 3.0, "offset_minutes": 26.5, "range_label": "5:26 p. m. - 5:29 p. m."}, {"label": "Párr. 11", "minutes": 3.5, "offset_minutes": 29.5, "range_label": "5:29 p. m. - 5:33 p. m."}, {"label": "Párr. 12", "minutes": 4.5, "offset_minutes": 33.0, "range_label": "5:33 p. m. - 5:37 p. m."}, {"label": "Párr. 13", "minutes": 3.5, "offset_minutes": 37.5, "range_label": "5:37 p. m. - 5:41 p. m."}, {"label": "Párr. 14", "minutes": 4.5, "offset_minutes": 41.0, "range_label": "5:41 p. m. - 5:45 p. m."}, {"label": "Párr. 15", "minutes": 5.0, "offset_minutes": 45.5, "range_label": "5:45 p. m. - 5:50 p. m."}, {"label": "Párr. 16", "minutes": 3.5, "offset_minutes": 50.5, "range_label": "5:50 p. m. - 5:54 p. m."}, {"label": "Párr. 17", "minutes": 3.0, "offset_minutes": 54.0, "range_label": "5:54 p. m. - 5:57 p. m."}, {"label": "Párr. 18 y “¿Qué respondería?”", "minutes": 2.0, "offset_minutes": 57.0, "range_label": "5:57 p. m. - 5:59 p. m."}], "paragraphs": [{"study_number": 1, "kind": "introductorio", "timing_minutes": 2.0}, {"study_number": 2, "kind": "introductorio", "timing_minutes": 2.0}, {"study_number": 3, "kind": "introductorio", "timing_minutes": 3.0}, {"study_number": 4, "kind": "introductorio", "timing_minutes": 2.5}, {"study_number": 5, "kind": "introductorio", "timing_minutes": 2.5}, {"study_number": 6, "kind": "troncal", "timing_minutes": 2.75}, {"study_number": 7, "kind": "troncal", "timing_minutes": 2.75}, {"study_number": 8, "kind": "troncal", "timing_minutes": 3.5}, {"study_number": 9, "kind": "troncal", "timing_minutes": 4.0}, {"study_number": 10, "kind": "introductorio", "timing_minutes": 3.0}, {"study_number": 11, "kind": "introductorio", "timing_minutes": 3.5}, {"study_number": 12, "kind": "troncal", "timing_minutes": 4.5}, {"study_number": 13, "kind": "troncal", "timing_minutes": 3.5}, {"study_number": 14, "kind": "troncal", "timing_minutes": 4.5}, {"study_number": 15, "kind": "troncal", "timing_minutes": 5.0}, {"study_number": 16, "kind": "troncal", "timing_minutes": 3.5}, {"study_number": 17, "kind": "troncal", "timing_minutes": 3.0}, {"study_number": 18, "kind": "cierre", "timing_minutes": 2.0}]}</script><script>
+</article></div></div></section></div><div class="study-hover-tooltip" hidden="" id="study-hover-tooltip">
+<div class="study-hover-tooltip-head">
+<div>
+<p class="study-hover-tooltip-kicker" id="study-hover-tooltip-kicker">Pasaje bíblico citado</p>
+<h3 class="study-hover-tooltip-title"><a href="#" id="study-hover-tooltip-title" rel="noopener noreferrer" target="_blank"></a></h3>
+<p class="study-hover-tooltip-subtitle" id="study-hover-tooltip-subtitle"></p>
+</div>
+<button aria-label="Cerrar vista previa" class="study-hover-tooltip-close" id="study-hover-tooltip-close" type="button">×</button>
+</div>
+<div class="study-hover-tooltip-body" id="study-hover-tooltip-body"></div>
+</div><script id="study-timing-data" type="application/json">{"default_start": "2026-03-21T17:00", "total_minutes": 60, "intro_minutes": 1.5, "closing_minutes": 1.0, "blocks": [{"label": "Párrs. 1-2", "minutes": 4.0, "offset_minutes": 1.5, "range_label": "5:01 p. m. - 5:05 p. m."}, {"label": "Párr. 3", "minutes": 3.0, "offset_minutes": 5.5, "range_label": "5:05 p. m. - 5:08 p. m."}, {"label": "Párrs. 4-5", "minutes": 5.0, "offset_minutes": 8.5, "range_label": "5:08 p. m. - 5:13 p. m."}, {"label": "Párrs. 6-7", "minutes": 5.5, "offset_minutes": 13.5, "range_label": "5:13 p. m. - 5:19 p. m."}, {"label": "Párr. 8", "minutes": 3.5, "offset_minutes": 19.0, "range_label": "5:19 p. m. - 5:22 p. m."}, {"label": "Párr. 9", "minutes": 4.0, "offset_minutes": 22.5, "range_label": "5:22 p. m. - 5:26 p. m."}, {"label": "Párr. 10", "minutes": 3.0, "offset_minutes": 26.5, "range_label": "5:26 p. m. - 5:29 p. m."}, {"label": "Párr. 11", "minutes": 3.5, "offset_minutes": 29.5, "range_label": "5:29 p. m. - 5:33 p. m."}, {"label": "Párr. 12", "minutes": 4.5, "offset_minutes": 33.0, "range_label": "5:33 p. m. - 5:37 p. m."}, {"label": "Párr. 13", "minutes": 3.5, "offset_minutes": 37.5, "range_label": "5:37 p. m. - 5:41 p. m."}, {"label": "Párr. 14", "minutes": 4.5, "offset_minutes": 41.0, "range_label": "5:41 p. m. - 5:45 p. m."}, {"label": "Párr. 15", "minutes": 5.0, "offset_minutes": 45.5, "range_label": "5:45 p. m. - 5:50 p. m."}, {"label": "Párr. 16", "minutes": 3.5, "offset_minutes": 50.5, "range_label": "5:50 p. m. - 5:54 p. m."}, {"label": "Párr. 17", "minutes": 3.0, "offset_minutes": 54.0, "range_label": "5:54 p. m. - 5:57 p. m."}, {"label": "Párr. 18 y “¿Qué respondería?”", "minutes": 2.0, "offset_minutes": 57.0, "range_label": "5:57 p. m. - 5:59 p. m."}], "paragraphs": [{"study_number": 1, "kind": "introductorio", "timing_minutes": 2.0}, {"study_number": 2, "kind": "introductorio", "timing_minutes": 2.0}, {"study_number": 3, "kind": "introductorio", "timing_minutes": 3.0}, {"study_number": 4, "kind": "introductorio", "timing_minutes": 2.5}, {"study_number": 5, "kind": "introductorio", "timing_minutes": 2.5}, {"study_number": 6, "kind": "troncal", "timing_minutes": 2.75}, {"study_number": 7, "kind": "troncal", "timing_minutes": 2.75}, {"study_number": 8, "kind": "troncal", "timing_minutes": 3.5}, {"study_number": 9, "kind": "troncal", "timing_minutes": 4.0}, {"study_number": 10, "kind": "introductorio", "timing_minutes": 3.0}, {"study_number": 11, "kind": "introductorio", "timing_minutes": 3.5}, {"study_number": 12, "kind": "troncal", "timing_minutes": 4.5}, {"study_number": 13, "kind": "troncal", "timing_minutes": 3.5}, {"study_number": 14, "kind": "troncal", "timing_minutes": 4.5}, {"study_number": 15, "kind": "troncal", "timing_minutes": 5.0}, {"study_number": 16, "kind": "troncal", "timing_minutes": 3.5}, {"study_number": 17, "kind": "troncal", "timing_minutes": 3.0}, {"study_number": 18, "kind": "cierre", "timing_minutes": 2.0}]}</script><script id="study-bible-tooltip-data" type="application/json">{}</script><script>
 const timingConfig = JSON.parse(document.getElementById('study-timing-data').textContent);
+const bibleTooltipData = JSON.parse(document.getElementById('study-bible-tooltip-data')?.textContent || '{}');
+const bibleTooltip = document.getElementById('study-hover-tooltip');
+const bibleTooltipTitle = document.getElementById('study-hover-tooltip-title');
+const bibleTooltipSubtitle = document.getElementById('study-hover-tooltip-subtitle');
+const bibleTooltipBody = document.getElementById('study-hover-tooltip-body');
+const bibleTooltipClose = document.getElementById('study-hover-tooltip-close');
+let bibleTooltipShowTimer = null;
+let bibleTooltipHideTimer = null;
+let currentTooltipTrigger = null;
 
 function formatTime(date) {
   return date.toLocaleTimeString('es-BO', {
@@ -919,6 +1029,122 @@ function formatTime(date) {
 
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
+}
+
+function clearBibleTooltipTimers() {
+  window.clearTimeout(bibleTooltipShowTimer);
+  window.clearTimeout(bibleTooltipHideTimer);
+}
+
+function hideBibleTooltip() {
+  clearBibleTooltipTimers();
+  if (!bibleTooltip) {
+    return;
+  }
+  bibleTooltip.hidden = true;
+  currentTooltipTrigger = null;
+}
+
+function positionBibleTooltip(trigger) {
+  if (!bibleTooltip || !trigger) {
+    return;
+  }
+  const rect = trigger.getBoundingClientRect();
+  const margin = 12;
+  const width = bibleTooltip.offsetWidth;
+  const height = bibleTooltip.offsetHeight;
+  const left = clamp(rect.left + (rect.width / 2) - (width / 2), margin, window.innerWidth - width - margin);
+  let top = rect.bottom + 12;
+  if (top + height > window.innerHeight - margin) {
+    top = rect.top - height - 12;
+  }
+  if (top < margin) {
+    top = margin;
+  }
+  bibleTooltip.style.left = `${left}px`;
+  bibleTooltip.style.top = `${top}px`;
+}
+
+function renderBibleTooltip(trigger) {
+  if (!bibleTooltip) {
+    return;
+  }
+  const key = trigger.dataset.studyTooltipKey;
+  const payload = bibleTooltipData[key];
+  if (!payload) {
+    return;
+  }
+
+  bibleTooltipTitle.textContent = payload.title || trigger.textContent.trim();
+  bibleTooltipTitle.href = payload.href || trigger.href || '#';
+  bibleTooltipSubtitle.textContent = payload.subtitle || '';
+  bibleTooltipBody.innerHTML = '';
+
+  (payload.verses || []).forEach((verse) => {
+    const paragraph = document.createElement('p');
+    paragraph.className = 'study-hover-tooltip-verse';
+    const number = document.createElement('span');
+    number.className = 'study-hover-tooltip-verse-num';
+    number.textContent = `${verse.number}`;
+    paragraph.appendChild(number);
+    paragraph.append(document.createTextNode(verse.text));
+    bibleTooltipBody.appendChild(paragraph);
+  });
+
+  bibleTooltip.hidden = false;
+  currentTooltipTrigger = trigger;
+  positionBibleTooltip(trigger);
+}
+
+function queueBibleTooltip(trigger) {
+  clearBibleTooltipTimers();
+  bibleTooltipShowTimer = window.setTimeout(() => {
+    renderBibleTooltip(trigger);
+  }, 720);
+}
+
+function queueBibleTooltipHide() {
+  clearBibleTooltipTimers();
+  bibleTooltipHideTimer = window.setTimeout(() => {
+    hideBibleTooltip();
+  }, 180);
+}
+
+function bindBibleTooltips() {
+  if (!bibleTooltip) {
+    return;
+  }
+
+  document.querySelectorAll('[data-study-tooltip-key]').forEach((trigger) => {
+    trigger.addEventListener('mouseenter', () => queueBibleTooltip(trigger));
+    trigger.addEventListener('mouseleave', () => queueBibleTooltipHide());
+    trigger.addEventListener('focus', () => renderBibleTooltip(trigger));
+    trigger.addEventListener('blur', () => queueBibleTooltipHide());
+  });
+
+  bibleTooltip.addEventListener('mouseenter', () => {
+    clearBibleTooltipTimers();
+  });
+  bibleTooltip.addEventListener('mouseleave', () => {
+    queueBibleTooltipHide();
+  });
+
+  bibleTooltipClose?.addEventListener('click', hideBibleTooltip);
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      hideBibleTooltip();
+    }
+  });
+  window.addEventListener('resize', () => {
+    if (!bibleTooltip.hidden && currentTooltipTrigger) {
+      positionBibleTooltip(currentTooltipTrigger);
+    }
+  });
+  document.addEventListener('scroll', () => {
+    if (!bibleTooltip.hidden && currentTooltipTrigger) {
+      positionBibleTooltip(currentTooltipTrigger);
+    }
+  }, true);
 }
 
 function buildSchedule(start) {
@@ -1162,6 +1388,7 @@ backdrop.addEventListener('click', () => {
   backdrop.hidden = true;
 });
 
+bindBibleTooltips();
 applyTimes();
 updateFullscreenButton();
 window.setInterval(applyTimes, 30000);

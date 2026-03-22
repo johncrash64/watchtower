@@ -432,13 +432,17 @@
       "question_pid": "p48",
       "section": "Perdón",
       "kind": "troncal",
-      "direct_answer": "Antes de la Conmemoración podemos meditar en que Jehová, gracias al rescate, nos perdona de verdad y no quiere que vivamos aplastados por pecados ya arrepentidos.",
+      "direct_answer": "Antes de la Conmemoración podemos pensar en cómo nos beneficia saber que Jehová nos perdona.",
       "underline_text": [
-        "gracias al rescate no tenemos que mortificarnos recordando pecados del pasado de los que ya nos hemos arrepentido"
+        "Antes de asistir a la Conmemoración este año, dediquemos tiempo a pensar en cómo nos beneficia saber que Jehová nos perdona."
       ],
       "highlights": [
         {
           "kind": "primary",
+          "text": "Antes de asistir a la Conmemoración este año, dediquemos tiempo a pensar en cómo nos beneficia saber que Jehová nos perdona."
+        },
+        {
+          "kind": "secondary",
           "text": "gracias al rescate no tenemos que mortificarnos recordando pecados del pasado de los que ya nos hemos arrepentido"
         },
         {
@@ -454,12 +458,12 @@
           "text": "él está “dispuesto a perdonar”"
         }
       ],
-      "main_point": "El artículo aterriza el rescate en la conciencia cristiana: Jehová puede perdonar de un modo que nosotros a veces tardamos en aceptar.",
-      "application": "Este es un buen párrafo para pedir una aplicación práctica, no una confesión personal larga.",
+      "main_point": "El artículo lleva el rescate al terreno de la conciencia: valorar el perdón de Jehová incluye aprender a creerle cuando dice que realmente nos ha limpiado.",
+      "application": "Aquí conviene buscar una aplicación serena: cómo dejar de cargar culpas ya perdonadas, sin convertir el comentario en una confesión larga.",
       "extra_question": "¿Por qué no debemos seguir juzgándonos si Jehová ya perdonó?",
       "concept_title": "Perdón real",
       "concept_question": "¿Por qué no debemos seguir juzgándonos si Jehová ya perdonó?",
-      "concept_answer": "Porque Jehová es quien decide sobre el perdón, y el rescate le da base legal para limpiarnos por completo.",
+      "concept_answer": "Porque Jehová es quien emite el veredicto del perdón, y el rescate le da la base para limpiarnos por completo; si él ya perdonó, no debemos retener una culpa que él decidió quitar.",
       "concept_sources": [
         {
           "label": "1 Juan 1:6, 7",
@@ -526,12 +530,12 @@
           "text": "Es una situación en la que estamos todos los descendientes imperfectos de Adán."
         }
       ],
-      "main_point": "Aquí el artículo amplía el sentido del pecado para explicar por qué el rescate no solo perdona culpas, sino que también abre la puerta a la curación total.",
-      "application": "Vale la pena ayudar a la congregación a ver la conexión entre pecado heredado, enfermedad, envejecimiento y muerte.",
+      "main_point": "Aquí el artículo amplía el sentido del pecado: no solo rompe una norma, también describe una condición heredada que desfigura en nosotros lo que Jehová quiso que el ser humano fuera.",
+      "application": "Vale la pena ayudar a la congregación a ver por qué el rescate tiene que hacer dos cosas: perdonar lo malo que hacemos y curar la condición imperfecta que heredamos.",
       "extra_question": "¿Por qué aquí pecado incluye algo que heredamos?",
-      "concept_title": "Pecado heredado",
+      "concept_title": "Pecado e imperfección",
       "concept_question": "¿Por qué aquí pecado incluye algo que heredamos?",
-      "concept_answer": "Porque el artículo está explicando que el rescate no solo cubre actos malos, sino también la condición imperfecta que todos recibimos de Adán.",
+      "concept_answer": "Porque muestra que el pecado también es una condición heredada: nos impide reflejar plenamente las cualidades de Jehová y vivir como él quiso para el ser humano; por eso el rescate no solo perdona actos, también abre el camino para restaurarnos.",
       "concept_sources": [
         {
           "label": "Sal. 51:5",
@@ -540,6 +544,10 @@
         {
           "label": "it-2 “Pecado”",
           "href": "https://wol.jw.org/es/wol/l/r4/lp-s?q=it-2+Pecado"
+        },
+        {
+          "label": "Imperfección",
+          "href": "https://wol.jw.org/es/wol/l/r4/lp-s?q=Imperfecci%C3%B3n"
         }
       ],
       "timing_minutes": 4.0,
