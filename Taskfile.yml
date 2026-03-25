@@ -1,0 +1,44 @@
+version: "3"
+
+tasks:
+  default:
+    desc: Show watchtower CLI help
+    cmds:
+      - go run ./cmd/watchtower help
+
+  test:
+    desc: Run all Go tests
+    cmds:
+      - go test ./...
+
+  tidy:
+    desc: Sync Go dependencies
+    cmds:
+      - go mod tidy
+
+  ingest:
+    desc: Ingest manual HTML/EPUB input
+    cmds:
+      - go run ./cmd/watchtower ingest {{.CLI_ARGS}}
+
+  analyze:
+    desc: Analyze ingested study with AI
+    cmds:
+      - go run ./cmd/watchtower analyze {{.CLI_ARGS}}
+
+  review:
+    desc: Start local review web app
+    cmds:
+      - go run ./cmd/watchtower review {{.CLI_ARGS}}
+
+  export:
+    desc: Export outputs from approved/edited data
+    cmds:
+      - go run ./cmd/watchtower export {{.CLI_ARGS}}
+
+  run:
+    desc: Full pipeline (ingest + analyze + export)
+    cmds:
+      - go run ./cmd/watchtower run {{.CLI_ARGS}}
+
+
