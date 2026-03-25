@@ -27,6 +27,7 @@ type LLMConfig struct {
 	OpenAI      OpenAIConfig  `yaml:"openai"`
 	Gemini      GeminiConfig  `yaml:"gemini"`
 	Local       LocalAIConfig `yaml:"local"`
+	GLM         GLMConfig     `yaml:"glm"`
 }
 
 type OpenAIConfig struct {
@@ -46,6 +47,12 @@ type LocalAIConfig struct {
 	URL     string `yaml:"url"`
 	Model   string `yaml:"model"`
 	APIKey  string `yaml:"api_key"`
+}
+
+type GLMConfig struct {
+	APIKey string `yaml:"api_key"`
+	Model  string `yaml:"model"`
+	URL    string `yaml:"url"`
 }
 
 func Defaults() Config {
@@ -69,6 +76,10 @@ func Defaults() Config {
 				Enabled: true,
 				URL:     "http://127.0.0.1:11434/v1/chat/completions",
 				Model:   "llama3.1:8b",
+			},
+			GLM: GLMConfig{
+				Model: "glm-4-flash",
+				URL:   "https://open.bigmodel.cn/api/paas/v4/chat/completions",
 			},
 		},
 	}
@@ -150,5 +161,15 @@ func overrideFromEnv(cfg *Config) {
 	}
 	if v, ok := os.LookupEnv("LOCAL_LLM_ENABLED"); ok && v != "" {
 		cfg.LLM.Local.Enabled = v == "1" || v == "true" || v == "TRUE"
+	}
+
+	if v, ok := os.LookupEnv("GLM_API_KEY"); ok {
+		cfg.LLM.GLM.APIKey = v
+	}
+	if v, ok := os.LookupEnv("GLM_MODEL"); ok && v != "" {
+		cfg.LLM.GLM.Model = v
+	}
+	if v, ok := os.LookupEnv("GLM_BASE_URL"); ok && v != "" {
+		cfg.LLM.GLM.URL = v
 	}
 }

@@ -68,9 +68,17 @@ func BuildClients(cfg config.Config, provider string, mode string) (FactoryResul
 		if cfg.LLM.Gemini.APIKey != "" {
 			clients = append(clients, NewGeminiClient(cfg.LLM.Gemini.URL, cfg.LLM.Gemini.APIKey, cfg.LLM.Gemini.Model))
 		}
+		if cfg.LLM.GLM.APIKey != "" {
+			clients = append(clients, NewOpenAIClient(cfg.LLM.GLM.URL, cfg.LLM.GLM.APIKey, cfg.LLM.GLM.Model, "glm"))
+		}
 		if cfg.LLM.Local.Enabled {
 			clients = append(clients, NewOpenAIClient(cfg.LLM.Local.URL, cfg.LLM.Local.APIKey, cfg.LLM.Local.Model, "local"))
 		}
+	case "glm":
+		if cfg.LLM.GLM.APIKey == "" {
+			return FactoryResult{}, fmt.Errorf("GLM_API_KEY is required for provider=glm")
+		}
+		clients = append(clients, NewOpenAIClient(cfg.LLM.GLM.URL, cfg.LLM.GLM.APIKey, cfg.LLM.GLM.Model, "glm"))
 	default:
 		return FactoryResult{}, fmt.Errorf("unsupported provider %q", provider)
 	}
